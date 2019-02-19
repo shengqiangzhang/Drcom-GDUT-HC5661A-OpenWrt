@@ -30,8 +30,8 @@
 - 一款支持刷入第三方系统([openwrt](https://openwrt.org/))的路由器
 - **该路由器已联网并获得开发者(root)权限**
 - **一根网线**
-- 下载软件[WinSCP](./software/WinSCP-5.13.7-Setup.exe)
-- 下载软件putty，32位操作系统请下载[putty32](./software/putty32.exe)，64位系统请下载[putty64](./software/putty64.exe)
+- 下载软件[WinSCP](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/software/WinSCP-5.13.7-Setup.exe)
+- 下载软件putty，32位操作系统请下载[putty32](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/software/putty32.exe)，64位系统请下载[putty64](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/software/putty64.exe)
 
 
 
@@ -70,7 +70,7 @@
 
 模式：SCP 
 
-![](./img/1.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/1.png)
 
 
 
@@ -80,11 +80,11 @@
 
 ## 刷入Breed
 
-使用[putty64](./software/putty64.exe)登入你的路由器后台，主机名、账号、密码、端口均与上述相同，登入成功后键入以下命令
+使用[putty64](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/software/putty64.exe)登入你的路由器后台，主机名、账号、密码、端口均与上述相同，登入成功后键入以下命令
 
 `mtd -r write /tmp/breed-mt7628-hiwifi-hc5661a.bin u-boot` 
 
-![](./img/2.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/2.png)
 
 显示rebooting后等待路由重启完成，不死uboot就完成了刷入了。（注意，为了确定百分百刷入成功，建议此时什么都不要动，等待5分钟后再进行其他操作）
 
@@ -106,7 +106,7 @@
 
 如下图:
 
-![](./img/3.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/3.png)
 
 
 
@@ -126,15 +126,15 @@
 
 为了保险起见，首先进行固件备份，以备不时之需。严重强烈建议极路由用户刷Breed后，第一次进入后台就备份一次，这样以后想要重新刷回官方系统时原有功能不会受到影响，仍然能够访问云平台。
 
-![](./img/6.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/6.png)
 
 
 
 现在正是开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
 
-![](./img/4.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/4.png)
 
-![](./img/5.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/5.png)
 
 
 
@@ -144,7 +144,7 @@
 
 密码:默认为admin
 
-![](./img/7.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/7.png)
 
 
 
@@ -252,19 +252,19 @@ cd .. && make package/ODP/compile
 
 - 点击 Network（网络）-> Interfaces（接口），查看LAN的MAC地址并复制
 
-![](./img/8.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/8.png)
 
 
 
 修改Dr.com客户端的配置
 
-![](./img/9.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/9.png)
 
 
 
 `配置完成后，重启路由器`，耐心等待若干分钟（15分钟内），查看是否拨号成功。
 
-![](./img/10.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/10.png)
 
 
 
@@ -379,13 +379,13 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 
 
-![](./img/11.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/11.png)
 
 
 
 提交后，然后打开以下页面，重启`cron`服务
 
-![](./img/12.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/12.png)
 
 
 
@@ -399,7 +399,6 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
-
 
 
 
