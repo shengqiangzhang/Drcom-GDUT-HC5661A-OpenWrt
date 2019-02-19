@@ -70,7 +70,7 @@
 
 模式：SCP 
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/1.png)
+![](./img/1.png)
 
 
 
@@ -84,7 +84,7 @@
 
 `mtd -r write /tmp/breed-mt7628-hiwifi-hc5661a.bin u-boot` 
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/2.png)
+![](./img/2.png)
 
 显示rebooting后等待路由重启完成，不死uboot就完成了刷入了。（注意，为了确定百分百刷入成功，建议此时什么都不要动，等待5分钟后再进行其他操作）
 
@@ -106,7 +106,7 @@
 
 如下图:
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/3.png)
+![](./img/3.png)
 
 
 
@@ -126,15 +126,15 @@
 
 为了保险起见，首先进行固件备份，以备不时之需。严重强烈建议极路由用户刷Breed后，第一次进入后台就备份一次，这样以后想要重新刷回官方系统时原有功能不会受到影响，仍然能够访问云平台。
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/6.png)
+![](./img/6.png)
 
 
 
 现在正是开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/4.png)
+![](./img/4.png)
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/5.png)
+![](./img/5.png)
 
 
 
@@ -144,7 +144,7 @@
 
 密码:默认为admin
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/7.png)
+![](./img/7.png)
 
 
 
@@ -252,19 +252,19 @@ cd .. && make package/ODP/compile
 
 - 点击 Network（网络）-> Interfaces（接口），查看LAN的MAC地址并复制
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/8.png)
+![](./img/8.png)
 
 
 
 修改Dr.com客户端的配置
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/9.png)
+![](./img/9.png)
 
 
 
 `配置完成后，重启路由器`，耐心等待若干分钟（15分钟内），查看是否拨号成功。
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/10.png)
+![](./img/10.png)
 
 
 
@@ -379,13 +379,13 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/11.png)
+![](./img/11.png)
 
 
 
 提交后，然后打开以下页面，重启`cron`服务
 
-![](/Users/bird/Desktop/GDUT-DRCOM/img/12.png)
+![](./img/12.png)
 
 
 
