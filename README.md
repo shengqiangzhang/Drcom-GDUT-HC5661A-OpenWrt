@@ -158,17 +158,18 @@
 
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
-| 路由器版本                           | 下载链接                                                     | 密码 |
-| ------------------------------------ | ------------------------------------------------------------ | ---- |
-| GDUT-极路由HC5661、HC5761和HC5861    | [下载链接](https://pan.baidu.com/s/1_SNTcn40zPLYieKZ_hz3QA#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi%2FHC5661_HC5761_HC5861&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi) | GJXS |
-| GDUT-极路由HC5661A和HC5861B          | [下载链接](https://pan.baidu.com/s/1OTnN7Cu5YKOHrpC-mFlzQg#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi%2FHC5661A_HC5861B&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi) | GJXS |
-| GDUT-极路由HC5962                    | [下载链接](https://pan.baidu.com/s/1RgVk1cDxN9OZpbXT4B_Hrw#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi%2FHC5962&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi) | GJXS |
-| GDUT-极路由HC6361                    | [下载链接](https://pan.baidu.com/s/1U8KrQN7aY-EFy4KDir3FUg#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi%2FHC6361&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FHiWiFi) | GJXS |
-| GDUT-斐讯K2T                         | [下载链接](https://pan.baidu.com/s/101HxA0EmiBtoh0M-JJeduQ#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM%2FK2T&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM) | GJXS |
-| GDUT-斐讯K2P                         | [下载链接](https://pan.baidu.com/s/1Ud9C4D4c7gr3JWpXaGLAww#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM%2FK2P&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM) | GJXS |
-| GDUT-斐讯K1-PSG1208、K2-PSG1218和K2G | [下载链接](https://pan.baidu.com/s/1QLALFDvXR7nVWK9p-mN-Zg#list/path=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM%2FPSG1208_K2%20PSG1218_K2G&parentPath=%2F%E6%A0%A1%E5%9B%AD%E7%BD%91drcom%2Fdrcom%E5%AE%A2%E6%88%B7%E7%AB%AF%2FPHICOMM) | GJXS |
+| 路由器版本                           | 下载链接                                                     |
+| ------------------------------------ | ------------------------------------------------------------ |
+| GDUT-极路由HC5661、HC5761和HC5861    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861) |
+| GDUT-极路由HC5661A和HC5861B          | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B) |
+| GDUT-极路由HC5962                    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5962) |
+| GDUT-极路由HC6361                    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC6361) |
+| GDUT-斐讯K2T                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2T) |
+| GDUT-斐讯K2P                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P) |
+| GDUT-斐讯K1-PSG1208、K2-PSG1218和K2G | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
+
 
 
 
@@ -398,13 +399,10 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 # 补充
 
 点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
+
 点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 
 
 
 
 如您有疑问，请发送邮件至sqzhang77@gmail.com
-
-**感谢以下开发者：**
-
-[GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://chn.moe/sub/study/index.php/archives/20/)
