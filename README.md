@@ -23,9 +23,7 @@
 
 [GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://chn.moe/sub/study/index.php/archives/20/)
 
-<br />
-
-<br />
+<br /><br />
 
 # 准备工作
 
@@ -35,9 +33,7 @@
 - 下载软件[WinSCP](./software/WinSCP-5.13.7-Setup.exe)
 - 下载软件putty，32位操作系统请下载[putty32](./software/putty32.exe)，64位系统请下载[putty64](./software/putty64.exe)
 
-<br />
-
-<br />
+<br /><br />
 
 # 步骤一：获取路由器root权限
 
@@ -48,9 +44,7 @@
 
 其他路由器可查看其他教程获取root权限。
 
-<br />
-
-<br />
+<br /><br />
 
 # 步骤二：刷入不死Breed
 
@@ -58,9 +52,7 @@
 
 [Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例**(不同型号下载不同的Breed，请务必对号入座)**，下载[breed-mt7628-hiwifi-hc5661a.bin](https://breed.hackpascal.net/breed-mt7628-hiwifi-hc5661a.bin)
 
-<br />
-
-<br />
+<br /><br />
 
 ## 上传到指定目录
 
@@ -82,9 +74,7 @@
 
 登陆成功后进入`/tmp目录`，将刚才下载的[breed-mt7628-hiwifi-hc5661a.bin](https://breed.hackpascal.net/breed-mt7628-hiwifi-hc5661a.bin)上传到这个目录
 
-<br />
-
-<br />
+<br /><br />
 
 ## 刷入Breed
 
@@ -96,11 +86,7 @@
 
 显示rebooting后等待路由重启完成，不死uboot就完成了刷入了。（注意，为了确定百分百刷入成功，建议此时什么都不要动，等待5分钟后再进行其他操作）
 
-
-
-<br />
-
-<br />
+<br /><br />
 
 # 步骤三：刷入OpenWrt 系统固件
 
@@ -118,9 +104,7 @@
 
 ![](./img/3.png)
 
-<br />
-
-<br />
+<br /><br />
 
 ## 开始刷入OpenWrt固件
 
@@ -160,9 +144,7 @@
 
 
 
-<br />
-
-<br />
+<br /><br />
 
 # 步骤四：安装Dr.com插件
 
@@ -196,9 +178,7 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 至此，Dr.com插件安装完毕。
 
-
-
-
+<br /><br />
 
 对于没有上述对应型号路由器的`广工(广东工业大学)同学`，可进行以下步骤进行编译生成自己的Dr.com插件.
 
@@ -224,9 +204,7 @@ cd .. && make package/ODP/compile
 
 4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四：安装Dr.com插件 "步骤四：安装Dr.com插件")安装Dr.com客户端
 
-<br />
-
-<br />
+<br /><br />
 
 # 步骤五：配置上网
 
@@ -275,9 +253,7 @@ cd .. && make package/ODP/compile
 
 ![](./img/10.png)
 
-<br />
-
-<br />
+<br /><br />
 
 # 步骤六：配置防检测
 
@@ -318,11 +294,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   ![](./img/19.png)
 
-  <br />
-
-  <br />
-
-  
+  <br /><br />
 
 ## 修改 HTTP 头的 UA标志
 
@@ -338,7 +310,7 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
   ![](./img/13.png)
 
-
+<br /><br />
 
 - 配置 Privoxy 设置。点击 Services -> Privoxy WEB proxy。
   - Files and Directories（文件和目录）：Action Files 删除到只剩一个框，填入`match-all.action`。Filter files 和 Trust files 均留空。
@@ -368,8 +340,6 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 <br /><br />
 
-
-
 - 配置防火墙转发。点击 Network -> Firewall（防火墙），然后点击 Custom Rules 标签，在大框框里另起一行(**注意，之前已经添加了6行代码，不要把刚刚添加的几行代码给删除了**)，添加下面的代码：
 
   ```
@@ -390,8 +360,6 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 <br />
 
-
-
 - 使用 Privoxy 替换 UA。打开`http://config.privoxy.org/edit-actions-list?f=0`，如果打不开，请重启路由器多测试几遍。点击 Edit 按钮。在Action 那一列中，hide-user-agent 改选为 Enable（绿色），在右侧 User Agent string to send 框中填写以下内容：
 
   `(Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36`
@@ -400,9 +368,7 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 ![](./img/21.png)
 
-<br />
-
-<br />
+<br /><br />
 
 ![](./img/22.png)
 
@@ -420,9 +386,7 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
   ![](./img/24.png)
 
-  <br />
-
-  <br />
+  <br /><br />
 
 ## 设置定时重启
 
@@ -450,9 +414,7 @@ UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信�
 
 至此，所有步骤均已配置完毕，可以安心上网了。
 
-<br />
-
-<br />
+<br /><br />
 
 # 补充
 
