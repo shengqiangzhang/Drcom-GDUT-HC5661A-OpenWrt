@@ -30,8 +30,8 @@
 - 一款支持刷入第三方系统([openwrt](https://openwrt.org/))的路由器
 - **该路由器已联网并获得开发者(root)权限**
 - **一根网线**
-- 下载软件[WinSCP](./software/WinSCP-5.13.7-Setup.exe)
-- 下载软件putty，32位操作系统请下载[putty32](./software/putty32.exe)，64位系统请下载[putty64](./software/putty64.exe)
+- 下载软件[WinSCP](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/software/WinSCP-5.13.7-Setup.exe)
+- 下载软件putty，32位操作系统请下载[putty32](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/software/putty32.exe)，64位系统请下载[putty64](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/software/putty64.exe)
 
 <br /><br />
 
@@ -50,7 +50,7 @@
 
 ## 下载Breed
 
-[Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例，**不同型号下载不同的Breed，请务必对号入座**，下载[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)
+[Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例，**不同型号下载不同的Breed，请务必对号入座**，下载[breed-mt7628-hiwifi-hc5661a.bin](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/breed/breed-mt7628-hiwifi-hc5661a.bin)
 
 <br /><br />
 
@@ -68,21 +68,21 @@
 
 模式：SCP 
 
-![](./img/1.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/1.png)
 
 
 
-登陆成功后进入`/tmp目录`，将刚才下载的[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)上传到这个目录
+登陆成功后进入`/tmp目录`，将刚才下载的[breed-mt7628-hiwifi-hc5661a.bin](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/breed/breed-mt7628-hiwifi-hc5661a.bin)上传到这个目录
 
 <br /><br />
 
 ## 刷入Breed
 
-使用[putty64](./software/putty64.exe)登入你的路由器后台，主机名、账号、密码、端口均与上述相同，登入成功后键入以下命令
+使用[putty64](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/software/putty64.exe)登入你的路由器后台，主机名、账号、密码、端口均与上述相同，登入成功后键入以下命令
 
 `mtd -r write /tmp/breed-mt7628-hiwifi-hc5661a.bin u-boot` 
 
-![](./img/2.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/2.png)
 
 显示rebooting后等待路由重启完成，不死uboot就完成了刷入了。（注意，为了确定百分百刷入成功，建议此时什么都不要动，等待5分钟后再进行其他操作）
 
@@ -98,11 +98,11 @@
 
 
 
-点击这里[OpenWrt Downloads](http://downloads.openwrt.org/releases/18.06.2/targets/)下载对应型号的OpenWrt固件，以`极路由1S HC5661A`为例,点击下载[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](./openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)
+点击这里[OpenWrt Downloads](http://downloads.openwrt.org/releases/18.06.2/targets/)下载对应型号的OpenWrt固件，以`极路由1S HC5661A`为例,点击下载[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)
 
 如下图:
 
-![](./img/3.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/3.png)
 
 <br /><br />
 
@@ -122,15 +122,15 @@
 
 为了保险起见，首先进行固件备份，以备不时之需。严重强烈建议极路由用户刷Breed后，第一次进入后台就备份一次，这样以后想要重新刷回官方系统时原有功能不会受到影响，仍然能够访问云平台。
 
-![](./img/6.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/6.png)
 
 
 
-现在正是开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](./openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
+现在正是开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
 
-![](./img/4.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/4.png)
 
-![](./img/5.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/5.png)
 
 
 
@@ -140,7 +140,7 @@
 
 密码:默认为admin
 
-![](./img/7.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/7.png)
 
 
 
@@ -239,19 +239,19 @@ cd .. && make package/ODP/compile
 
 - 点击 Network（网络）-> Interfaces（接口），查看LAN的MAC地址并复制
 
-![](./img/8.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/8.png)
 
 
 
 修改Dr.com客户端的配置
 
-![](./img/9.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/9.png)
 
 
 
 `配置完成后，重启路由器`，耐心等待若干分钟（15分钟内），查看是否拨号成功。
 
-![](./img/10.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/10.png)
 
 <br /><br />
 
@@ -292,7 +292,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   然后点击 Restart Firewall（重启防火墙）。
 
-  ![](./img/19.png)
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/19.png)
 
   <br /><br />
 
@@ -308,7 +308,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
   - 点击 Update lists（刷新列表）按钮，等待几分钟。如果提示好几条“Signature check passed”那么这一步执行成功；如果卡死了，几分钟后再进入这个页面，看到了很长很长的软件列表，那也是成功了。
   - 在 Filter（过滤器）中填写`luci-app-privoxy`，点击 Find package（查找软件包）按钮。点击下方“luci-app-privoxy”对应的 Install（安装）按钮。如果提示好几条“Configuring xxxx”，那么就是执行成功了；如果卡死后再进入管理页面，看到有一个 Services（服务）菜单，菜单里有 Privoxy WEB proxy（Privoxy 网络代理），那也是成功了。
 
-  ![](./img/13.png)
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/13.png)
 
 <br /><br />
 
@@ -320,23 +320,23 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 点击 Save & Apply。
 
-![](./img/14.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/14.png)
 
 <br /><br />
 
-![](./img/15.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/15.png)
 
 <br /><br />
 
-![](./img/16.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/16.png)
 
 <br /><br />
 
-![](./img/17.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/17.png)
 
 <br /><br />
 
-![](./img/18.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/18.png)
 
 <br /><br />
 
@@ -354,7 +354,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 点击 Restart Firewall（重启防火墙）按钮。
 
-![](./img/20.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/20.png)
 
 <br />
 
@@ -366,11 +366,11 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 其它全部选择为 No Change （紫色）。最后点击 Submit 按钮，再次重启路由器
 
-![](./img/21.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/21.png)
 
 <br /><br />
 
-![](./img/22.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/22.png)
 
 
 
@@ -378,13 +378,13 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   手机连接到该路由器的WIFI，使用手机在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
 
-  ![](./img/23.png)
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/23.png)
 
   <br />
 
   <br />
 
-  ![](./img/24.png)
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/24.png)
 
   <br /><br />
 
@@ -402,13 +402,13 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 
 
-![](./img/11.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/11.png)
 
 
 
 提交后，然后打开以下页面，重启`cron`服务
 
-![](./img/12.png)
+![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/12.png)
 
 
 
