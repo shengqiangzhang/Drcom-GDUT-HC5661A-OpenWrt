@@ -202,7 +202,7 @@ cd .. && make package/ODP/compile
 
 
 
-4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四:安装Dr.com插件)安装Dr.com客户端
+4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](# 步骤四安装Dr.com插件)安装Dr.com客户端
 
 <br /><br />
 
