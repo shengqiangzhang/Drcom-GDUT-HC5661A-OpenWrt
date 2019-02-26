@@ -373,17 +373,18 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/22.png)
 
 
-
 - 验证防检测效果。
 
-  手机连接到该路由器的WIFI，使用手机在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
+  手机连接到该路由器的WIFI，使用手机(注意关闭**为x屁x嗯**后再测试)在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
+  <br /><br />
+  注意关闭**为x屁x嗯**后再测试！注意关闭**为x屁x嗯**后再测试！注意关闭**为x屁x嗯**后再测试！
 
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/25.png)
+  <br />
+  ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/26.png)
+  <br />
   ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/23.png)
-
   <br />
-
-  <br />
-
   ![](https://raw.githubusercontent.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/master/img/24.png)
 
   <br /><br />
