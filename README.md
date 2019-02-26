@@ -35,7 +35,7 @@
 
 <br /><br />
 
-# 步骤一：获取路由器root权限
+# 步骤一:获取路由器root权限
 
 以`极路由1S HC5661A`为例，在您购买满14天后，请先登录极路由器后台，然后依次开通、安装开发者插件
 
@@ -46,7 +46,7 @@
 
 <br /><br />
 
-# 步骤二：刷入不死Breed
+# 步骤二:刷入不死Breed
 
 ## 下载Breed
 
@@ -88,7 +88,7 @@
 
 <br /><br />
 
-# 步骤三：刷入OpenWrt 系统固件
+# 步骤三:刷入OpenWrt 系统固件
 
 ## 下载对应的OpenWrt 系统固件
 
@@ -146,7 +146,7 @@
 
 <br /><br />
 
-# 步骤四：安装Dr.com插件
+# 步骤四:安装Dr.com插件
 
 这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找现成的)
 
@@ -202,11 +202,11 @@ cd .. && make package/ODP/compile
 
 
 
-4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四：安装Dr.com插件 "步骤四：安装Dr.com插件")安装Dr.com客户端
+4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四:安装Dr.com插件 "步骤四:安装Dr.com插件")安装Dr.com客户端
 
 <br /><br />
 
-# 步骤五：配置上网
+# 步骤五:配置上网
 
 1.点击 Network（网络）-> Interfaces（接口），点击“WAN”对应的 Edit(编辑) 按钮。
 
@@ -255,7 +255,7 @@ cd .. && make package/ODP/compile
 
 <br /><br />
 
-# 步骤六：配置防检测
+# 步骤六:配置防检测
 
 ## 同步时间
 
