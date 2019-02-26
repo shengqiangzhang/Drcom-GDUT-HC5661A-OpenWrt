@@ -373,25 +373,19 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 ![](./img/22.png)
 
 
-
+  <br /><br />
 - 验证防检测效果。
 
-  手机连接到该路由器的WIFI，使用手机(注意关闭<u>**为屁嗯**</u>后再测试)在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
-
-  <br />
-
+  手机连接到该路由器的WIFI，使用手机(注意关闭**为屁嗯**后再测试)在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
+  <br /><br />
   注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！
 
   ![](./img/25.png)
-
   <br />
-
+  ![](./img/26.png)
+  <br />
   ![](./img/23.png)
-
   <br />
-
-  <br />
-
   ![](./img/24.png)
 
   <br /><br />
