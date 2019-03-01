@@ -418,6 +418,9 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 <br /><br />
 
-# License
+# 补充
+`完整版`请点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
+欢迎您[star本项目](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 
+# License
 [The MIT License (MIT)](http://opensource.org/licenses/MIT)
