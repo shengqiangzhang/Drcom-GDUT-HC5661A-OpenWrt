@@ -23,7 +23,7 @@
 
 [GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://chn.moe/sub/study/index.php/archives/20/)
 
-<br /><br />
+
 
 # 准备工作
 
@@ -33,7 +33,7 @@
 - 下载软件[WinSCP](./software/WinSCP-5.13.7-Setup.exe)
 - 下载软件putty，32位操作系统请下载[putty32](./software/putty32.exe)，64位系统请下载[putty64](./software/putty64.exe)
 
-<br /><br />
+
 
 # 步骤一:获取路由器root权限
 
@@ -44,7 +44,7 @@
 
 其他路由器可查看其他教程获取root权限。
 
-<br /><br />
+
 
 # 步骤二:刷入不死Breed
 
@@ -52,7 +52,7 @@
 
 [Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例，**不同型号下载不同的Breed，请务必对号入座**，下载[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)
 
-<br /><br />
+
 
 ## 上传到指定目录
 
@@ -74,7 +74,7 @@
 
 登陆成功后进入`/tmp目录`，将刚才下载的[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)上传到这个目录
 
-<br /><br />
+
 
 ## 刷入Breed
 
@@ -86,7 +86,7 @@
 
 显示rebooting后等待路由重启完成，不死uboot就完成了刷入了。（注意，为了确定百分百刷入成功，建议此时什么都不要动，等待5分钟后再进行其他操作）
 
-<br /><br />
+
 
 # 步骤三:刷入OpenWrt 系统固件
 
@@ -104,7 +104,7 @@
 
 ![](./img/3.png)
 
-<br /><br />
+
 
 ## 开始刷入OpenWrt固件
 
@@ -144,7 +144,7 @@
 
 
 
-<br /><br />
+
 
 # 步骤四:安装Dr.com插件
 
@@ -161,6 +161,7 @@
 | GDUT-斐讯K2T                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2T) |
 | GDUT-斐讯K2P                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P) |
 | GDUT-斐讯K1-PSG1208、K2-PSG1218和K2G | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G) |
+| GDUT-ramips-rt305x                   | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ramips-rt305x) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -176,9 +177,9 @@ cd /tmp
 opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 ```
 
-至此，Dr.com插件安装完毕。
+**至此，Dr.com插件安装完毕。**
 
-<br /><br />
+
 
 对于没有上述对应型号路由器的`广工(广东工业大学)同学`，可进行以下步骤进行编译生成自己的Dr.com插件.
 
@@ -186,25 +187,68 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 2.然后进入[OpenWrt 18.06](https://archive.openwrt.org/releases/18.06.0/targets/)，根据自己路由器的`路由器型号`进入相应的网站,`以极路由HC5661A为例`,进入[ramips/mt76x8](https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/)，找到[openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz](https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz)并下载
 
-3.打开并登录putty，键入以下命令：
+3.在linux系统下(建议debian或者ubuntu，不建议centos)，键入以下命令：
 
-```c
-#解压文件夹
-tar xjf openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-cd ~/openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz/
+```bash
+#本教程在 Debian 8.9系统下完成的
 
-#进入package下载软件包
+#先更新包列表
+sudo apt-get update
+
+#安装ncurses，不同Linux版本执行不同命令
+#Debian/Ubuntu 执行下面这1条命令，2选1
+sudo apt-get install libncurses5-dev libncursesw5-dev
+#CentOS 执行下面这条命令，2选1
+yum install ncurses-devel ncurses
+
+#再次更新包列表
+sudo apt-get update
+
+#安装awk，执行过程中有任何提示，请输入Y确认
+sudo apt-get install gawk
+
+#安装git，执行过程中有任何提示，请输入Y确认
+sudo apt-get install git
+
+#在home目录下完成我们的工作，最好不要在root下
+cd /home
+
+#在线下载我们的openwrt-sdk，这一步网络比较慢，下载可能比较久
+#如果你想加快速度，则请从其他电脑*fan*qiang*下载完成后传输到这个位置(/home)
+wget https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+
+#解压我们刚刚下载的openwrt-sdk，假设这个压缩包已经放在/home目录下了
+tar xvJf openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+
+#进入该文件夹
+cd openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64
+
+#生成key-build文件，这里不解释，有兴趣的可以自己去搜搜
+./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
+
+#再进入package文件夹，并下载drcom ODP文件夹
 cd package && git clone https://github.com/GJXS1980/ODP.git
 
-#编译
-cd .. && make package/ODP/compile
+#返回上层目录，也就是为了回到openwrt-sdk这个目录
+cd ..
+
+#开始编译
+make package/ODP/compile
+
+#编译到最后的时候，会弹出一个框
+#首先，通过移动键盘左右键，移到SAVE，然后按下回车键，接着再按下回车键选择OK，再次按下回车键选择Exit
+#最后，通过移动键盘左右键，移到Exit，按下回车键确认。
+#等待几秒钟编译完成
+#最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的bin/packages/xxx/base/yyy.ipk
 ```
 
+![](./img/27.jpg)
 
 
-4.最后编译完的软件包在`/bin/packages/xxxx/base/`目录下,到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四:安装Dr.com插件)安装Dr.com客户端
 
-<br /><br />
+4.最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的`bin/packages/xxx/base/yyy.ipk`，到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四:安装Dr.com插件)安装Dr.com客户端
+
+
 
 # 步骤五:配置上网
 
@@ -253,7 +297,7 @@ cd .. && make package/ODP/compile
 
 ![](./img/10.png)
 
-<br /><br />
+
 
 # 步骤六:配置防检测
 
@@ -294,7 +338,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   ![](./img/19.png)
 
-  <br /><br />
+  
 
 ## 修改 HTTP 头的 UA标志
 
@@ -310,7 +354,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   ![](./img/13.png)
 
-<br /><br />
+
 
 - 配置 Privoxy 设置。点击 Services -> Privoxy WEB proxy。
   - Files and Directories（文件和目录）：Action Files 删除到只剩一个框，填入`match-all.action`。Filter files 和 Trust files 均留空。
@@ -322,23 +366,23 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 ![](./img/14.png)
 
-<br /><br />
+
 
 ![](./img/15.png)
 
-<br /><br />
+
 
 ![](./img/16.png)
 
-<br /><br />
+
 
 ![](./img/17.png)
 
-<br /><br />
+
 
 ![](./img/18.png)
 
-<br /><br />
+
 
 - 配置防火墙转发。点击 Network -> Firewall（防火墙），然后点击 Custom Rules 标签，在大框框里另起一行(**注意，之前已经添加了6行代码，不要把刚刚添加的几行代码给删除了**)，添加下面的代码：
 
@@ -356,9 +400,9 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 ![](./img/20.png)
 
-<br />
 
-<br />
+
+
 
 - 使用 Privoxy 替换 UA。打开`http://config.privoxy.org/edit-actions-list?f=0`，如果打不开，请重启路由器多测试几遍。点击 Edit 按钮。在Action 那一列中，hide-user-agent 改选为 Enable（绿色），在右侧 User Agent string to send 框中填写以下内容：
 
@@ -368,27 +412,27 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 ![](./img/21.png)
 
-<br /><br />
+
 
 ![](./img/22.png)
 
 
-  <br /><br />
+
 - 验证防检测效果。
 
   手机连接到该路由器的WIFI，使用手机(注意关闭**为屁嗯**后再测试)在浏览器打开`http://www.atool.org/useragent.php`，查看结果是否为Windows NT 6.3，而不是android或者iphone。
-  <br /><br />
+  
   注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！
 
   ![](./img/25.png)
-  <br />
+  
   ![](./img/26.png)
-  <br />
+  
   ![](./img/23.png)
-  <br />
+  
   ![](./img/24.png)
 
-  <br /><br />
+  
 
 ## 设置定时重启
 
@@ -416,7 +460,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 至此，所有步骤均已配置完毕，可以安心上网了。
 
-<br /><br />
+
 
 # 补充
 `完整版`请点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
