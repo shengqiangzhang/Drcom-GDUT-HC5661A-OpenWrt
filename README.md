@@ -223,9 +223,6 @@ tar xvJf openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 #进入该文件夹
 cd openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64
 
-#然后再进入package文件夹，并下载drcom ODP文件夹
-cd package && git clone https://github.com/GJXS1980/ODP.git
-
 #生成key-build文件，这里不解释，有兴趣的可以自己去搜搜
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
 
@@ -240,6 +237,9 @@ cd package && git clone https://github.com/GJXS1980/ODP.git
 
 #再次安装扩展包
 ./scripts/feeds install -a
+
+#然后再进入package文件夹，并下载drcom ODP文件夹
+cd package && git clone https://github.com/GJXS1980/ODP.git
 
 #返回上层目录，也就是为了回到openwrt-sdk这个目录
 cd ..
