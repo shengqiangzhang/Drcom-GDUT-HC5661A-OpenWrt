@@ -62,7 +62,7 @@
 | 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin) |
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962.bin](https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin) |
 | 极路由enjoy(HC5861B)             | 暂无                                                         |
-| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt 系统固件) |
+| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -105,7 +105,7 @@
 
 # 步骤三:刷入OpenWrt 系统固件
 
-## 下载对应的OpenWrt 系统固件
+## 下载对应的OpenWrt系统固件
 
 键入以下命令查看`路由器CPU的型号`，以确定我们要刷什么版本的固件
 
