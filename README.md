@@ -52,6 +52,21 @@
 
 [Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例，**不同型号下载不同的Breed，请务必对号入座**，下载[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)
 
+以下是几种常见的路由器型号对应的Breed下载链接：
+
+| 路由器版本                       | 下载链接                                                     |
+| -------------------------------- | ------------------------------------------------------------ |
+| 极路由1(HC6361)                  | [HC6361-uboot.bin](http://rssn.cn/roms/uboot/HC6361-uboot.bin) |
+| 极路由1S(HC5661**A**)            | [breed-mt7628-hiwifi-hc5661a.bin](https://breed.hackpascal.net/breed-mt7628-hiwifi-hc5661a.bin) |
+| 极路由1S(HC5661)/极路由2(HC5761) | [breed-mt7620-hiwifi-hc5761](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5761.bin) |
+| 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin) |
+| 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962.bin](https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin) |
+| 极路由enjoy(HC5861B)             | 暂无                                                         |
+| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到**步骤三** |
+
+> `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
+
+
 
 
 ## 上传到指定目录
@@ -172,7 +187,7 @@
 
 打开并登录putty，进行安装Dr.com，请键入以下命令：
 
-```
+```Bash
 cd /tmp
 opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 ```
@@ -189,7 +204,7 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 3.在linux系统下(建议debian或者ubuntu，不建议centos)，键入以下命令：
 
-```bash
+```Bash
 #本教程在 Debian 8.9系统下完成的
 
 #先更新包列表
