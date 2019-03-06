@@ -62,7 +62,7 @@
 | 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin) |
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962.bin](https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin) |
 | 极路由enjoy(HC5861B)             | 暂无                                                         |
-| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到**步骤三** |
+| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt 系统固件) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -119,6 +119,25 @@
 
 ![](./img/3.png)
 
+以下是几种常见的路由器型号对应的OpenWrt固件下载链接：
+
+| 路由器版本            | 下载链接                                                     |
+| --------------------- | ------------------------------------------------------------ |
+| 极路由1(HC6361)       | [openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin) |
+| 极路由1S(HC5661**A**) | [openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin) |
+| 极路由1S(HC5661)      | [openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin) |
+| 极路由2(HC5761)       | [openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin) |
+| 极路由3(HC5861)       | [openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin) |
+| 极路由4(HC5962)       | [openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin) |
+| 极路由enjoy(HC5861B)  | 暂无                                                         |
+| 斐讯K1                | [openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin) |
+| 斐讯K2(五个网口)      | [openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin) |
+| 斐讯K2C(四个网口)     | [openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin) |
+
+> `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
+
+
+
 
 
 ## 开始刷入OpenWrt固件
@@ -163,6 +182,8 @@
 
 # 步骤四:安装Dr.com插件
 
+## 安装现成插件
+
 这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找现成的)
 
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
@@ -194,7 +215,10 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 **至此，Dr.com插件安装完毕。**
 
+<br />
+<br />
 
+## 自己编译插件
 
 对于没有上述对应型号路由器的`广工(广东工业大学)同学`，可进行以下步骤进行编译生成自己的Dr.com插件.
 
@@ -273,7 +297,7 @@ make package/ODP/compile
 
 
 
-4.最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的`bin/packages/xxx/base/yyy.ipk`，到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#步骤四:安装Dr.com插件)安装Dr.com客户端
+4.最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的`bin/packages/xxx/base/yyy.ipk`，到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#安装现成插件)安装Dr.com客户端
 
 
 
@@ -463,7 +487,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 ## 设置定时重启
 
-由于使用了Privoxy代理，会使得所有的http流量均被转发到Privoxy，时间一旧，网络会变成异常慢。为了保证良好的网络，可以每天凌晨让路由器自动重启一遍以恢复路由器系统响应速度。
+由于使用了Privoxy代理，会使得所有的http流量均被转发到Privoxy，时间一久，网络会变成异常慢。为了保证良好的网络，可以每天凌晨让路由器自动重启一遍以恢复路由器系统响应速度。
 
 打开以下页面，键入以下代码(具体时间可自行更改)：
 
