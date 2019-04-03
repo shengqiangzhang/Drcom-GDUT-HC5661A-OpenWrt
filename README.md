@@ -27,11 +27,9 @@
 
 
 # 注意，斐讯K2P用户必看
-> 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由@Xue-JW解决
-
-> 使用斐讯K2P的同学，请直接下载[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)完成刷机教程
-
-> 如果您看不懂[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)中的教程，请先看完本教程后再尝试
+> 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由@Xue-JW解决；
+> 使用斐讯K2P的同学，请直接下载[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)完成刷机教程；
+> 如果您看不懂[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)中的教程，请先看完本教程后再尝试；
 
 
 
