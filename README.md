@@ -9,6 +9,16 @@
 
 
 
+# 注意，斐讯K2P用户必看
+
+> 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由[@Xue-JW](<https://github.com/Xue-JW>)同学解决；
+>
+> 使用斐讯K2P的同学，请直接下载[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)完成刷机教程；
+>
+> 如果您看不懂[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)中的教程，请先看完本教程后再尝试；
+
+
+
 # 前言
 
 本教程教您如何在[Drcom](https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))下使用路由器上校园网(以广东工业大学、极路由1S HC5661A为例)
@@ -24,12 +34,6 @@
 [GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://chn.moe/sub/study/index.php/archives/20/)
 
 
-
-
-# 注意，斐讯K2P用户必看
-> 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由@Xue-JW解决；
-> 使用斐讯K2P的同学，请直接下载[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)完成刷机教程；
-> 如果您看不懂[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)中的教程，请先看完本教程后再尝试；
 
 
 
