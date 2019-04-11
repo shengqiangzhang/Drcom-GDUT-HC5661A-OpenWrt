@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://openwrt.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Openwrt_Logo.svg/1920px-Openwrt_Logo.svg.png" width="500"></a>
+  <a href="https://openwrt.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Openwrt_Logo.svg"></a>
 </p>
 
 <p align="center">
