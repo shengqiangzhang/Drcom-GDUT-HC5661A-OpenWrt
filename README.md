@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/python/cpython"><img src="https://img.shields.io/badge/status-updating-brightgreen.svg"></a>
+    <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt"><img src="https://img.shields.io/badge/status-updating-brightgreen.svg"></a>
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt"><img src="https://img.shields.io/badge/platform-OpenWrt-blue.svg"></a>
     <a href="https://opensource.org/licenses/mit-license.php"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"></a>
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/stargazers"><img src="https://img.shields.io/github/stars/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt.svg?style=plastic"></a>
