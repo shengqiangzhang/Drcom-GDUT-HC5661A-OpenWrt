@@ -513,7 +513,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 - 使用 Privoxy 替换 UA。打开`http://config.privoxy.org/edit-actions-list?f=0`，如果打不开，请重启路由器多测试几遍。点击 Edit 按钮。在Action 那一列中，hide-user-agent 改选为 Enable（绿色），在右侧 User Agent string to send 框中填写以下内容：
 
-  `(Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36`
+  `Privoxy 3.0.26`
 
 其它全部选择为 No Change （紫色）。最后点击 Submit 按钮，再次重启路由器
 
