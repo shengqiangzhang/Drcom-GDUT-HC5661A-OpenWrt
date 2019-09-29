@@ -1,9 +1,0 @@
-{\
-+client-header-filter{change_mac_to_windows} \
-+client-header-filter{change_linux_to_windows} \
-+client-header-filter{change_windows_to_windows} \
-+client-header-filter{change_iphone_to_android} \
-+client-header-filter{change_ipad_to_android} \
-+client-header-filter{change_android_to_android} \
-}
-/

@@ -110,15 +110,16 @@
 
 以下是几种常见的路由器型号对应的Breed下载链接：
 
-| 路由器版本                       | 下载链接                                                     |
-| -------------------------------- | ------------------------------------------------------------ |
-| 极路由1(HC6361)                  | [HC6361-uboot.bin](http://rssn.cn/roms/uboot/HC6361-uboot.bin) |
-| 极路由1S(HC5661**A**)            | [breed-mt7628-hiwifi-hc5661a.bin](https://breed.hackpascal.net/breed-mt7628-hiwifi-hc5661a.bin) |
-| 极路由1S(HC5661)/极路由2(HC5761) | [breed-mt7620-hiwifi-hc5761](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5761.bin) |
-| 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861](https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin) |
-| 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962.bin](https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin) |
-| 极路由enjoy(HC5861B)             | 暂无                                                         |
-| 斐讯K1、K2一键刷Breed工具        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+| 路由器版本号                      | 下载链接地址                                                 |
+| --------------------------------| ---------------------------------------------------------- |
+| 极路由1(HC6361)                  | [HC6361-uboot][HC6361-uboot]                               |
+| 极路由1S(HC5661**A**)            | [breed-mt7628-hiwifi-hc5661a][breed-mt7628-hiwifi-hc5661a] |
+| 极路由1S(HC5661)/极路由2(HC5761)  | [breed-mt7620-hiwifi-hc5761][breed-mt7620-hiwifi-hc5761]   |
+| 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861][breed-mt7620-hiwifi-hc5861]   |
+| 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
+| 极路由enjoy(HC5861B)             | 暂时无                                                      |
+| 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
+| 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -129,7 +130,7 @@
 
 使用WinSCP登入你的路由器后台，其中：
 
-主机名：你的后台管理地址(比如192.168.1或者192.168.1.199)
+主机名：你的后台管理地址(比如192.168.1或者192.168.1.199或者其他)
 
 账号：root 
 
@@ -388,7 +389,7 @@ make package/ODP/compile
 
 4.配置dr.com客户端，这里以`广工(广东工业大学)`为例，进行如下配置：
 
-- 点击 Network（网络）-> Interfaces（接口），查看LAN的MAC地址并复制
+- 点击 Network（网络）-> Interfaces（接口），查看WAN6(eth0.2)的MAC地址并复制
 
 ![](./img/8.png)
 
@@ -420,7 +421,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
   - NTP server candidates（候选 NTP 服务器）四个框框分别填写
 
-    `cn.pool.ntp.org`、`pool.ntp.org`、`time.apple.com`。
+    `cn.pool.ntp.org`、`pool.ntp.org`、`time.apple.com`、`3.openwrt.pool.ntp.org`
 
 点击 Save & Apply 按钮。
 
@@ -527,7 +528,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 - 验证防检测效果。
 
-  手机连接到该路由器的WIFI，使用手机(注意关闭**为屁嗯**后再测试)在浏览器打开[http://www.user-agent.cn/](http://www.user-agent.cn/)，查看结果是否为Windows NT 6.3，而不是android或者iphone。
+  手机连接到该路由器的WIFI，使用手机(注意关闭**为屁嗯**后再测试)在浏览器打开[http://www.user-agent.cn/](http://www.user-agent.cn/) ，查看结果是否为Privoxy 3.0.26，而不是android或者iphone。
   
   注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！
 
@@ -576,3 +577,14 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 # License
 [The MIT License (MIT)](http://opensource.org/licenses/MIT)
+
+
+
+
+
+[HC6361-uboot]:http://rssn.cn/roms/uboot/HC6361-uboot.bin
+[breed-mt7628-hiwifi-hc5661a]:https://breed.hackpascal.net/breed-mt7628-hiwifi-hc5661a.bin
+[breed-mt7620-hiwifi-hc5761]:https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5761.bin
+[breed-mt7620-hiwifi-hc5861]:https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
+[breed-mt7621-hiwifi-hc5962]:https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin
+[breed-mt7620-xiaomi-mini]:https://breed.hackpascal.net/breed-mt7620-xiaomi-mini.bin
