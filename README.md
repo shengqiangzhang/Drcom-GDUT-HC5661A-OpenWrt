@@ -119,7 +119,7 @@
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
 | 极路由enjoy(HC5861B)             | 暂时无                                                      |
 | 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
-| 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版](https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ) 提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+| 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版][phicomm-breed]，提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -178,18 +178,19 @@
 
 以下是几种常见的路由器型号对应的OpenWrt固件下载链接：
 
-| 路由器版本            | 下载链接                                                     |
-| --------------------- | ------------------------------------------------------------ |
-| 极路由1(HC6361)       | [openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin) |
-| 极路由1S(HC5661**A**) | [openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin) |
-| 极路由1S(HC5661)      | [openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin) |
-| 极路由2(HC5761)       | [openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin) |
-| 极路由3(HC5861)       | [openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin) |
-| 极路由4(HC5962)       | [openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin) |
-| 极路由enjoy(HC5861B)  | 暂无                                                         |
-| 斐讯K1                | [openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin) |
-| 斐讯K2(五个网口)      | [openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin) |
-| 斐讯K2C(四个网口)     | [openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin](http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin) |
+| 路由器版本号            | 下载链接地址                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| 极路由1(HC6361)        | [openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin][openwrt-hc6361]|
+| 极路由1S(HC5661**A**)  | [openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin][openwrt-hc5661a]      |
+| 极路由1S(HC5661)       | [openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin][openwrt-hc5661]        |
+| 极路由2(HC5761)        | [openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin][openwrt-hc5761]        |
+| 极路由3(HC5861)        | [openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin][openwrt-hc5861]        |
+| 极路由4(HC5962)        | [openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin][openwrt-hc5962]        |
+| 极路由enjoy(HC5861B)   | 暂时无                                                                                 |
+| 斐讯K1版               | [openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin][openwrt-psg1208]      |
+| 斐讯K2版（五个网口）     | [openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin][openwrt-psg1218a]    |
+| 斐讯K2C版（四个网口）    | [openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin][openwrt-psg1218b]    |
+
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -245,16 +246,18 @@
 
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
-| 路由器版本                           | 下载链接                                                     |
-| ------------------------------------ | ------------------------------------------------------------ |
-| GDUT-极路由HC5661、HC5761和HC5861    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861) |
-| GDUT-极路由HC5661A和HC5861B          | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B) |
-| GDUT-极路由HC5962                    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5962) |
-| GDUT-极路由HC6361                    | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC6361) |
-| GDUT-斐讯K2T                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2T) |
-| GDUT-斐讯K2P                         | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P) |
-| GDUT-斐讯K1-PSG1208、K2-PSG1218和K2G | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G) |
-| GDUT-ramips-rt305x                   | [下载链接](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ramips-rt305x) |
+
+| 路由器版本号                           | 下载链接地址                                                     |
+| ------------------------------------ | -------------------------------------------------------------- |
+| GDUT-极路由HC5661, HC5761, HC5861     | [下载链接地址][gdut-drcom-hc5661]                                |
+| GDUT-极路由HC5661A, HC5861B           | [下载链接地址][gdut-drcom-hc5661a]                               |
+| GDUT-极路由HC5962                     | [下载链接地址][gdut-drcom-hc5962]                                |
+| GDUT-极路由HC6361                     | [下载链接地址][gdut-drcom-hc6361]                                |
+| GDUT-斐讯K2T版                        | [下载链接地址][gdut-drcom-k2t]                                   |
+| GDUT-斐讯K2P版                        | [下载链接地址][gdut-drcom-k2p]                                   |
+| GDUT-斐讯K1-PSG1208, K2-PSG1218，K2G  | [下载链接地址][gdut-drcom-psg1208]                               |
+| GDUT-ramips-rt305x                   | [下载链接地址][gdut-drcom-rt305x]                                |
+
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -588,3 +591,25 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 [breed-mt7620-hiwifi-hc5861]:https://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
 [breed-mt7621-hiwifi-hc5962]:https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin
 [breed-mt7620-xiaomi-mini]:https://breed.hackpascal.net/breed-mt7620-xiaomi-mini.bin
+[phicomm-breed]:https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ
+
+[openwrt-hc6361]:http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin
+[openwrt-hc5661a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin
+[openwrt-hc5661]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin
+[openwrt-hc5761]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin
+[openwrt-hc5861]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin
+[openwrt-hc5962]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin
+[openwrt-psg1208]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin
+[openwrt-psg1218a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin
+[openwrt-psg1218b]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin
+
+[gdut-drcom-hc5661]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861
+[gdut-drcom-hc5661a]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B
+[gdut-drcom-hc5962]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5962
+[gdut-drcom-hc6361]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC6361
+[gdut-drcom-k2t]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2T
+[gdut-drcom-k2p]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P
+[gdut-drcom-psg1208]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G
+[gdut-drcom-rt305x]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ramips-rt305x
+
+
