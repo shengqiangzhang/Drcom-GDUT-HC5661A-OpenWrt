@@ -13,31 +13,39 @@
 
 
 
-   * [免责声明](#免责声明)
-   * [注意，斐讯K2P用户必看](#注意斐讯k2p用户必看)
-   * [前言](#前言)
-   * [准备工作](#准备工作)
-   * [步骤一:获取路由器root权限](#步骤一获取路由器root权限)
-   * [步骤二:刷入不死Breed](#步骤二刷入不死breed)
-      * [下载Breed](#下载breed)
-      * [上传到指定目录](#上传到指定目录)
-      * [刷入Breed](#刷入breed)
-   * [步骤三:刷入OpenWrt 系统固件](#步骤三刷入openwrt-系统固件)
-      * [下载对应的OpenWrt系统固件](#下载对应的openwrt系统固件)
-      * [开始刷入OpenWrt固件](#开始刷入openwrt固件)
-   * [步骤四:安装Dr.com插件](#步骤四安装drcom插件)
-      * [安装现成插件](#安装现成插件)
-      * [自己编译插件](#自己编译插件)
-   * [步骤五:配置上网](#步骤五配置上网)
-   * [步骤六:配置防检测](#步骤六配置防检测)
-      * [同步时间](#同步时间)
-      * [修改 HTTP 头的 UA标志](#修改-http-头的-ua标志)
-      * [设置定时重启](#设置定时重启)
-   * [补充](#补充)
-   * [License](#license)
 
 
 
+<br /><br />
+* [免责声明](#免责声明)
+* [注意，斐讯K2P用户必看](#注意斐讯k2p用户必看)
+* [前言](#前言)
+* [准备工作](#准备工作)
+* [步骤一:获取路由器root权限](#步骤一获取路由器root权限)
+* [步骤二:刷入不死Breed](#步骤二刷入不死breed)
+  * [下载Breed](#下载breed)
+  * [上传到指定目录](#上传到指定目录)
+  * [刷入Breed](#刷入breed)
+* [步骤三:刷入OpenWrt 系统固件](#步骤三刷入openwrt-系统固件)
+  * [下载对应的OpenWrt系统固件](#下载对应的openwrt系统固件)
+  * [开始刷入OpenWrt固件](#开始刷入openwrt固件)
+* [步骤四:安装Dr.com插件](#步骤四安装drcom插件)
+  * [安装现成插件](#安装现成插件)
+  * [自己编译插件](#自己编译插件)
+* [步骤五:配置上网](#步骤五配置上网)
+* [步骤六:配置防检测](#步骤六配置防检测)
+  * [同步时间](#同步时间)
+  * [修改 HTTP 头的 UA标志](#修改-http-头的-ua标志)
+  * [设置定时重启](#设置定时重启)
+* [补充](#补充)
+* [License](#license)
+
+
+
+
+
+
+<br /><br />
 # 免责声明
 > 1. 在根据本教程进行实际操作时，如因您操作失误导致出现的一切意外，包括但不限于路由器变砖、故障、数据丢失等情况，概不负责；
 > 2. 该技术仅供学习交流，请勿将此技术应用于任何商业行为，所产生的法律责任由您自行承担；
@@ -45,6 +53,11 @@
 > 4. 请按照学校推荐的方式连接到互联网，如因个人问题受到相关校规追责，由您自行承担。
 
 
+
+
+
+
+<br /><br />
 # QQ交流群
 
 欢迎加入QQ交流群，群号748317786，仅限技术交流，禁止商业行为
@@ -52,6 +65,11 @@
 ![Q群号748317786](img/group.jpg)
 
 
+
+
+
+
+<br /><br />
 # 注意，斐讯K2P用户必看
 
 > 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由[@Xue-JW](<https://github.com/Xue-JW>)同学解决；
@@ -63,6 +81,9 @@
 
 
 
+
+
+<br /><br />
 # 前言
 
 本教程教您如何在[Drcom](https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))下使用路由器上校园网(以广东工业大学、极路由1S HC5661A为例)
@@ -81,6 +102,8 @@
 
 
 
+
+<br /><br />
 # 准备工作
 
 - 一款支持刷入第三方系统([openwrt](https://openwrt.org/))的路由器
@@ -91,6 +114,10 @@
 
 
 
+
+
+
+<br /><br />
 # 步骤一:获取路由器root权限
 
 以`极路由1S HC5661A`为例，在您购买满14天后，请先登录极路由器后台，然后依次开通、安装开发者插件
@@ -102,6 +129,10 @@
 
 
 
+
+
+
+<br /><br />
 # 步骤二:刷入不死Breed
 
 ## 下载Breed
@@ -160,6 +191,10 @@
 
 
 
+
+
+
+<br /><br />
 # 步骤三:刷入OpenWrt 系统固件
 
 ## 下载对应的OpenWrt系统固件
@@ -238,6 +273,8 @@
 
 
 
+
+<br /><br />
 # 步骤四:安装Dr.com插件
 
 ## 安装现成插件
@@ -289,68 +326,53 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 3.在linux系统下(建议debian或者ubuntu，不建议centos)，键入以下命令：
 
 ```Bash
-#本教程在 Debian 8.9系统下完成的
+# 本次交叉编译过程在 Debian 8.9系统下完成
 
-#先更新包列表
+# 先更新包列表
 sudo apt-get update
 
-#安装ncurses，不同Linux版本执行不同命令
-#Debian/Ubuntu 执行下面这1条命令，2选1
+# 安装ncurses，不同Linux版本执行不同命令
+# Debian/Ubuntu 执行下面这1条命令，2选1
 sudo apt-get install libncurses5-dev libncursesw5-dev
-#CentOS 执行下面这条命令，2选1
+# CentOS 执行下面这条命令，2选1
 yum install ncurses-devel ncurses
 
-#再次更新包列表
+# 再次更新包列表
 sudo apt-get update
 
-#安装awk，执行过程中有任何提示，请输入Y确认
+# 安装awk，执行过程中有任何提示，请输入Y确认
 sudo apt-get install gawk
 
-#安装git，执行过程中有任何提示，请输入Y确认
+# 安装git，执行过程中有任何提示，请输入Y确认
 sudo apt-get install git
 
-#在home目录下完成我们的工作，最好不要在root下
-cd /home
+# 返回到当前用户目录，建议在当前用户目录下完成我们的工作，最好不要在root下
+cd ~
 
-#在线下载我们的openwrt-sdk，这一步网络比较慢，下载可能比较久
-#如果你想加快速度，则请从其他电脑*fan*qiang*下载完成后传输到这个位置(/home)
+# 在线下载相应的openwrt-sdk，这一步网络比较慢，下载可能比较久
+# 如果你想加快速度，则请从其他电脑*fan*qiang*下载完成后传输到这个位置(也就是当前用户目录)
 wget https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 
-#解压我们刚刚下载的openwrt-sdk，假设这个压缩包已经放在/home目录下了
+# 解压我们刚刚下载的openwrt-sdk，请务必确保该压缩包已经位于当前目录
 tar xvJf openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 
-#进入该文件夹
+# 进入该sdk文件夹
 cd openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64
 
-#生成key-build文件，这里不解释，有兴趣的可以自己去搜搜
-./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
-
-#更新拓展包，此步骤消耗时间比较长
-./scripts/feeds update -a
-
-#安装扩展包
-./scripts/feeds install -a
-
-#再次更新拓展包
-./scripts/feeds update -a
-
-#再次安装扩展包
-./scripts/feeds install -a
-
-#然后再进入package文件夹，并下载drcom ODP文件夹
+# 然后再进入package文件夹，并下载drcom ODP文件夹
 cd package && git clone https://github.com/GJXS1980/ODP.git
 
-#返回上层目录，也就是为了回到openwrt-sdk这个目录
+# 返回上层目录，也就是为了回到openwrt-sdk这个目录
 cd ..
 
-#开始编译
+# 开始编译
 make package/ODP/compile
 
-#编译到最后的时候，会弹出一个框
-#首先，通过移动键盘左右键，移到SAVE，然后按下回车键，接着再按下回车键选择OK，再次按下回车键选择Exit
-#最后，通过移动键盘左右键，移到Exit，按下回车键确认。
-#等待几秒钟编译完成
-#最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的bin/packages/xxx/base/yyy.ipk
+# 编译到最后的时候，会弹出一个框
+# 此时，通过移动键盘左右键，移到Exit，按下回车键确认
+# 接着，通过移动键盘左右键，移到Yes ，按下回车键确认
+# 等待几秒钟编译完成
+# 最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的bin/packages/xxx/base/yyy.ipk
 ```
 
 ![](./img/27.jpg)
@@ -361,6 +383,10 @@ make package/ODP/compile
 
 
 
+
+
+
+<br /><br />
 # 步骤五:配置上网
 
 1.点击 Network（网络）-> Interfaces（接口），点击“WAN”对应的 Edit(编辑) 按钮。
@@ -410,6 +436,10 @@ make package/ODP/compile
 
 
 
+
+
+
+<br /><br />
 # 步骤六:配置防检测
 
 ## 同步时间
@@ -538,12 +568,8 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
   ![](./img/25.png)
   
   ![](./img/26.png)
-  
-  ![](./img/23.png)
-  
-  ![](./img/24.png)
 
-  
+
 
 ## 设置定时重启
 
@@ -569,17 +595,29 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 
 
-至此，所有步骤均已配置完毕，可以安心上网了。
+至此，所有步骤均已配置完毕，可以发现正常联网并且多台设备同时连接不会掉线。
+
+**本教程仅限于技术交流，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态；**
 
 
 
+
+
+
+<br /><br />
 # 补充
-`完整版`请点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
+**完整版**请点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 
 项目持续更新，欢迎您[star本项目](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 
+
+
+
+
+
+<br /><br />
 # License
-[The MIT License (MIT)](http://opensource.org/licenses/MIT)
+[AGPLv3](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/blob/master/LICENSE)
 
 
 
