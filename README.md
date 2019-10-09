@@ -6,7 +6,7 @@
 <p align="center">
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt"><img src="https://img.shields.io/badge/status-updating-brightgreen.svg"></a>
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt"><img src="https://img.shields.io/badge/platform-OpenWrt-blue.svg"></a>
-    <a href="https://opensource.org/licenses/mit-license.php"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"></a>
+    <a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/license-AGPLv3-blue.svg"></a>
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/stargazers"><img src="https://img.shields.io/github/stars/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt.svg?style=plastic"></a>
     <a href="https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/network/members"><img src="https://img.shields.io/github/forks/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt.svg?style=plastic"></a>
 </p>
@@ -18,7 +18,6 @@
 
 <br /><br />
 * [免责声明](#免责声明)
-* [注意，斐讯K2P用户必看](#注意斐讯k2p用户必看)
 * [前言](#前言)
 * [准备工作](#准备工作)
 * [步骤一:获取路由器root权限](#步骤一获取路由器root权限)
@@ -70,20 +69,6 @@
 
 
 <br /><br />
-# 注意，斐讯K2P用户必看
-
-> 部分同学反映斐讯K2P根据本教程刷完以后工作不正常，现已由[@Xue-JW](<https://github.com/Xue-JW>)同学解决；
->
-> 使用斐讯K2P的同学，请直接下载[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)完成刷机教程；
->
-> 如果您看不懂[K2P专用文件](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/files/2974860/k2p.zip)中的教程，请先看完本教程后再尝试，本教程对新手较为友好，请耐心看完。
-
-
-
-
-
-
-<br /><br />
 # 前言
 
 本教程教您如何在[Drcom](https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))下使用路由器上校园网(以广东工业大学、极路由1S HC5661A为例)
@@ -96,7 +81,7 @@
 
 本教程非原创，在以下开发者的基础上进行改进：
 
-[GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://chn.moe/sub/study/index.php/archives/20/)
+[GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://catalog.chn.moe/)
 
 
 
@@ -161,7 +146,7 @@
 
 使用WinSCP登入你的路由器后台，其中：
 
-主机名：你的后台管理地址(比如192.168.1或者192.168.1.199或者其他)
+主机名：你的后台管理地址(比如192.168.1.1或者192.168.1.199或者其他)
 
 账号：root 
 
@@ -323,10 +308,10 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 2.然后进入[OpenWrt 18.06](https://archive.openwrt.org/releases/18.06.0/targets/)，根据自己路由器的`路由器型号`进入相应的网站,`以极路由HC5661A为例`,进入[ramips/mt76x8](https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/)，找到[openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz](https://archive.openwrt.org/releases/18.06.0/targets/ramips/mt76x8/openwrt-sdk-18.06.0-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz)并下载
 
-3.在linux系统下(建议debian或者ubuntu，不建议centos)，键入以下命令：
+3.在linux系统下(建议debian或者ubuntu)，键入以下命令：
 
 ```Bash
-# 本次交叉编译过程在 Debian 8.9系统下完成
+# 本次交叉编译过程在 Debian 8.9 系统下完成
 
 # 先更新包列表
 sudo apt-get update
@@ -418,13 +403,19 @@ make package/ODP/compile
 
 4.配置dr.com客户端，这里以`广工(广东工业大学)`为例，进行如下配置：
 
-- 点击 Network（网络）-> Interfaces（接口），查看WAN6(eth0.2)的MAC地址并复制
+- 点击 Network（网络）-> Interfaces（接口），查看WAN6的MAC地址并复制
 
 ![](./img/8.png)
 
 
 
 修改Dr.com客户端的配置
+
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
+
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
+
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
 
 ![](./img/9.png)
 
@@ -597,7 +588,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 
 至此，所有步骤均已配置完毕，可以发现正常联网并且多台设备同时连接不会掉线。
 
-**本教程仅限于技术交流，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态；**
+**本教程仅限于技术交流，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态。**
 
 
 
@@ -649,5 +640,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 [gdut-drcom-k2p]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P
 [gdut-drcom-psg1208]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G
 [gdut-drcom-rt305x]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ramips-rt305x
+
+
 
 
