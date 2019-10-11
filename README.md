@@ -279,7 +279,7 @@
 | GDUT-斐讯K2P版                        | [下载链接地址][gdut-drcom-k2p]                                   |
 | GDUT-斐讯K1-PSG1208, K2-PSG1218，K2G  | [下载链接地址][gdut-drcom-psg1208]                               |
 | GDUT-ramips-rt305x                   | [下载链接地址][gdut-drcom-rt305x]                                |
-
+| GDUT-ar71xx_tiny                     | [下载链接地址][gdut-ar71xx-tiny]                                 |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -640,7 +640,7 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 [gdut-drcom-k2p]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AF-K2P
 [gdut-drcom-psg1208]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%96%90%E8%AE%AFK1-PSG1208%E3%80%81K2-PSG1218%E5%92%8CK2G
 [gdut-drcom-rt305x]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ramips-rt305x
-
+[gdut-ar71xx-tiny]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ar71xx-tiny
 
 
 
