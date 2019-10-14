@@ -33,7 +33,6 @@
   * [自己编译插件](#自己编译插件)
 * [步骤五:配置上网](#步骤五配置上网)
 * [步骤六:配置防检测](#步骤六配置防检测)
-  * [同步时间](#同步时间)
   * [修改 HTTP 头的 UA标志](#修改-http-头的-ua标志)
   * [设置定时重启](#设置定时重启)
 * [补充](#补充)
@@ -48,7 +47,7 @@
 # 免责声明
 > 1. 在根据本教程进行实际操作时，如因您操作失误导致出现的一切意外，包括但不限于路由器变砖、故障、数据丢失等情况，概不负责；
 > 2. 该技术仅供学习交流，请勿将此技术应用于任何商业行为，所产生的法律责任由您自行承担；
-> 3. 部分学校明令禁止使用路由器上网，相关文件请点击[广东工业大学校园网责任书](http://nic.gdut.edu.cn/fj/xuesheng1003.doc)、[厦门大学校园网责任书](https://net.xmu.edu.cn/_upload/article/files/e0/35/162b0f8849c4816e669df3a4f11c/dd7b487e-a51d-4e41-8d8e-d9fd42338a33.pdf)查看。本教程仅用于交流使用，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态；
+> 3. 部分学校明令禁止使用路由器上网，相关文件请点击[广东工业大学校园网责任书][gdut-letter-of-responsibility]、[厦门大学校园网责任书][xmu-letter-of-responsibility]查看。本教程仅用于交流使用，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态；
 > 4. 请按照学校推荐的方式连接到互联网，如因个人问题受到相关校规追责，由您自行承担。
 
 
@@ -71,9 +70,9 @@
 <br /><br />
 # 前言
 
-本教程教您如何在[Drcom](https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))下使用路由器上校园网(以广东工业大学、极路由1S HC5661A为例)
+本教程教您如何在[Drcom][drcom-introduction]下使用路由器上校园网(以广东工业大学、极路由1S HC5661A为例)
 
-本教程适合使用[Drcom](https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))进行拨号上网的用户，同时，要求您的路由器支持刷入第三方系统，如openwrt。由于是针对新手的教程，所以叙述部分可能会比较冗杂，您可自行跳到不同的章节。
+本教程适合使用[Drcom][drcom-introduction]进行拨号上网的用户，同时，要求您的路由器支持刷入第三方系统，如openwrt。由于是针对新手的教程，所以叙述部分可能会比较冗杂，您可自行跳到不同的章节。
 
 本教程以极路由1S HC5661A为例，不同型号路由器所对应的教程略有不同，请您注意。
 
@@ -81,7 +80,7 @@
 
 本教程非原创，在以下开发者的基础上进行改进：
 
-[GJXS](https://www.gjxslisa.club/2018/10/27/drcom/?)、[NickHopps](https://blog.csdn.net/liucheng2012560/article/details/78755309)、[陈浩南](https://catalog.chn.moe/)
+[GJXS][GJXS]、[NickHopps][NickHopps]、[陈浩南][chenhaonan]
 
 
 
@@ -198,19 +197,20 @@
 
 以下是几种常见的路由器型号对应的OpenWrt固件下载链接：
 
-| 路由器版本号            | 下载链接地址                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------- |
-| 极路由1(HC6361)        | [openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin][openwrt-hc6361]|
-| 极路由1S(HC5661**A**)  | [openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin][openwrt-hc5661a]      |
-| 极路由1S(HC5661)       | [openwrt-18.06.2-ramips-mt7620-hc5661-squashfs-sysupgrade.bin][openwrt-hc5661]        |
-| 极路由2(HC5761)        | [openwrt-18.06.2-ramips-mt7620-hc5761-squashfs-sysupgrade.bin][openwrt-hc5761]        |
-| 极路由3(HC5861)        | [openwrt-18.06.2-ramips-mt7620-hc5861-squashfs-sysupgrade.bin][openwrt-hc5861]        |
-| 极路由4(HC5962)        | [openwrt-18.06.2-ramips-mt7621-hc5962-squashfs-sysupgrade.bin][openwrt-hc5962]        |
-| 极路由enjoy(HC5861B)   | 暂时无                                                                                 |
-| 斐讯K1版               | [openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin][openwrt-psg1208]      |
-| 斐讯K2版（五个网口）     | [openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin][openwrt-psg1218a]    |
-| 斐讯K2C版（四个网口）    | [openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin][openwrt-psg1218b]    |
-
+| 路由器版本号           | CPU的架构      | 下载链接地址                                                         |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| 极路由1(HC6361)       | ar71xx-generic| [openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361.bin][openwrt-hc6361] |
+| 极路由1S(HC5661**A**) | ramips/mt76x8 | [openwrt-18.06.2-ramips-mt76x8-hc5661a.bin][openwrt-hc5661a]       |
+| 极路由1S(HC5661)      | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5661.bin][openwrt-hc5661]         |
+| 极路由2(HC5761)       | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5761.bin][openwrt-hc5761]         |
+| 极路由3(HC5861)       | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5861.bin][openwrt-hc5861]         |
+| 极路由4(HC5962)       | ramips/mt7621 | [openwrt-18.06.2-ramips-mt7621-hc5962.bin][openwrt-hc5962]         |
+| 极路由enjoy(HC5861B)  | 暂时无         | 暂时无                                                              |
+| 斐讯K1版              | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1208.bin][openwrt-psg1208]       |
+| 斐讯K2版 （五个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218a.bin][openwrt-psg1218a]     |
+| 斐讯K2C版（四个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218b.bin][openwrt-psg1218b]     |
+| 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip][openwrt-k2p]     |
+| 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -269,17 +269,17 @@
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
 
-| 路由器版本号                           | 下载链接地址                                                     |
-| ------------------------------------ | -------------------------------------------------------------- |
-| GDUT-极路由HC5661, HC5761, HC5861     | [下载链接地址][gdut-drcom-hc5661]                                |
-| GDUT-极路由HC5661A, HC5861B           | [下载链接地址][gdut-drcom-hc5661a]                               |
-| GDUT-极路由HC5962                     | [下载链接地址][gdut-drcom-hc5962]                                |
-| GDUT-极路由HC6361                     | [下载链接地址][gdut-drcom-hc6361]                                |
-| GDUT-斐讯K2T版                        | [下载链接地址][gdut-drcom-k2t]                                   |
-| GDUT-斐讯K2P版                        | [下载链接地址][gdut-drcom-k2p]                                   |
-| GDUT-斐讯K1-PSG1208, K2-PSG1218，K2G  | [下载链接地址][gdut-drcom-psg1208]                               |
-| GDUT-ramips-rt305x                   | [下载链接地址][gdut-drcom-rt305x]                                |
-| GDUT-ar71xx_tiny                     | [下载链接地址][gdut-ar71xx-tiny]                                 |
+| 路由器版本号                                         | 下载链接地址                                       |
+| -------------------------------------------------- | ------------------------------------------------ |
+| GDUT-极路由HC5661, HC5761, HC5861, 小米路由器mini版   | [下载链接地址][gdut-drcom-hc5661]                  |
+| GDUT-极路由HC5661A, HC5861B                         | [下载链接地址][gdut-drcom-hc5661a]                 |
+| GDUT-极路由HC5962                                   | [下载链接地址][gdut-drcom-hc5962]                  |
+| GDUT-极路由HC6361                                   | [下载链接地址][gdut-drcom-hc6361]                  |
+| GDUT-斐讯K2T版                                      | [下载链接地址][gdut-drcom-k2t]                     |
+| GDUT-斐讯K2P版                                      | [下载链接地址][gdut-drcom-k2p]                     |
+| GDUT-斐讯K1-PSG1208, K2-PSG1218，K2G                | [下载链接地址][gdut-drcom-psg1208]                 |
+| GDUT-ramips-rt305x                                 | [下载链接地址][gdut-drcom-rt305x]                  |
+| GDUT-ar71xx_tiny                                   | [下载链接地址][gdut-ar71xx-tiny]                   |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -374,56 +374,50 @@ make package/ODP/compile
 <br /><br />
 # 步骤五:配置上网
 
-1.点击 Network（网络）-> Interfaces（接口），点击“WAN”对应的 Edit(编辑) 按钮。
+1. 点击 Network（网络）-> Interfaces（接口），点击“WAN”对应的 Edit(编辑) 按钮。
 
 - Protocol（通信协议）：改选为`PPPoE`，然后点击出现的 Switch Protocol（切换协议）按钮。
 - PAP/CHAP username（PAP/CHAP 用户名）：学号
 - PAP/CHAP password（PAP/CHAP 密码）：校园网密码
 
 点击 Save & Apply（保存并应用）。这时，路由器本身和有线网已经可以上网了。
+<br /><br />
 
 
-
-2.点击 Network -> Wireless（无线）。如果提示 Disabled（已禁用）就点击 Enable（启用）。可能只有一个 2.4G 的，也可能有一个 2.4G 的、一个 5G 的。点 2.4G 的 Edit(编辑) 按钮。
+2. 点击 Network -> Wireless（无线）。如果提示 Disabled（已禁用）就点击 Enable（启用）。可能只有一个 2.4G 的，也可能有一个 2.4G 的、一个 5G 的。点 2.4G 的 Edit(编辑) 按钮。
 
 - ESSID：填 WiFi 的名字。
+<br /><br />
 
 
-
-3.点击 Wireless Security（无线安全）
+3. 点击 Wireless Security（无线安全）
 
 - Encryption（加密）：改选为`WPA2-PSK`
 - Key（密码）：填 WiFi 密码
-
 - 点击 Save & Apply（保存并应用）
-
-这时，WiFi 就可以正常联网啦。
-
+<br /><br />
 
 
-4.配置dr.com客户端，这里以`广工(广东工业大学)`为例，进行如下配置：
+4. 配置dr.com客户端，这里以`广工(广东工业大学)`为例，进行如下配置：
 
-- 点击 Network（网络）-> Interfaces（接口），查看WAN6的MAC地址并复制
+- 点击 Network（网络）-> Interfaces（接口），查看WAN6的MAC地址并复制，修改Dr.com客户端的配置。
 
 ![](./img/8.png)
 
 
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
 
-修改Dr.com客户端的配置
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
 
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
-
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
-
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，图片提示有误**
+**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
 
 ![](./img/9.png)
 
 
 
-`配置完成后，重启路由器`，耐心等待若干分钟（15分钟内），查看是否拨号成功。
+**配置完成后，重启路由器，耐心等待若干分钟（15分钟内），查看`PPPoE`是否拨号成功。**
 
-![](./img/10.png)
+![](./img/29.png)
 
 
 
@@ -433,158 +427,87 @@ make package/ODP/compile
 <br /><br />
 # 步骤六:配置防检测
 
-## 同步时间
-
-NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 OpenWrt 自带的 NTP 服务器，然后将局域网内所有时钟校正的请求都发给路由器上的 NTP 服务器（也就是说，无视局域网内的电脑原本想要和哪台服务器同步时间，而强制将路由器上的时钟作为标准），这样局域网内所有的电脑上的时间都会变得一致。
-
-点击 System（系统）->System（系统），只需要在管理页面中修改几个设置就可以了。
-
-- 配置 NTP 服务。点击 System -> System。
-
-  - 勾选 Enable NTP client（启用 NTP 客户端）和 Provide NTP server（作为 NTP 服务器提供服务）。
-
-  - NTP server candidates（候选 NTP 服务器）四个框框分别填写
-
-    `cn.pool.ntp.org`、`pool.ntp.org`、`time.apple.com`、`3.openwrt.pool.ntp.org`
-
-点击 Save & Apply 按钮。
-
-- 配置防火墙转发。点击 Network -> Firewall（防火墙），然后点击 Custom Rules 标签，在大框框里另起一行，添加下面的代码：
-
-  ```bash
-  iptables -t nat -N ntp_force_local
-  iptables -t nat -I PREROUTING -p udp --dport 123 -j ntp_force_local
-  iptables -t nat -A ntp_force_local -d 0.0.0.0/8 -j RETURN
-  iptables -t nat -A ntp_force_local -d 127.0.0.0/8 -j RETURN
-  iptables -t nat -A ntp_force_local -d 192.168.0.0/16 -j RETURN
-  iptables -t nat -A ntp_force_local -s 192.168.0.0/16 -j DNAT --to-destination 192.168.1.1
-  ```
-
-  第六行最后的`192.168.1.1`需要修改为你的路由器的管理页面地址。例如，你的管理页面地址是`192.168.10.1`，那么这一行代码需要修改为：
-
-  ```bash
-  iptables -t nat -A ntp_force_local -s 192.168.0.0/16 -j DNAT --to-destination 192.168.10.1
-  ```
-
-  然后点击 Restart Firewall（重启防火墙）。
-
-  ![](./img/19.png)
-
-  
-
+<br /><br />
 ## 修改 HTTP 头的 UA标志
 
 **UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信息加密，因此别人可以从这里看到这个数据包发自 Windows 电脑还是安卓手机等(所以根据这个原理，能够实现检测到超过1台设备立即强制断网的效果)。接下来把所有 HTTP 头中的 UA 都改得一样(伪装成只有一台设备，所以就不会被强制断网了)。**
 
+<br /><br />
+请打开路由器后台，查看路由器和openwrt的具体信息，以便确定我们要安装哪个版本的更改UA插件。
 
+![](./img/30.png)
 
-接下来，需要安装好 Privoxy 并正确配置，然后将所有 HTTP 流量转发给 Privoxy 代理，并在 Privoxy 中替换 UA。
+<br /><br />
+以下是几种常见的CPU架构对应的更改UA插件的下载链接：
 
-- 安装 Privoxy。进入路由器管理页面，点击 System(系统) -> Software（软件包）。
-  - 点击 Update lists（刷新列表）按钮，等待几分钟。如果提示好几条“Signature check passed”那么这一步执行成功；如果卡死了，几分钟后再进入这个页面，看到了很长很长的软件列表，那也是成功了。
-  - 在 Filter（过滤器）中填写`luci-app-privoxy`，点击 Find package（查找软件包）按钮。点击下方“luci-app-privoxy”对应的 Install（安装）按钮。如果提示好几条“Configuring xxxx”，那么就是执行成功了；如果卡死后再进入管理页面，看到有一个 Services（服务）菜单，菜单里有 Privoxy WEB proxy（Privoxy 网络代理），那也是成功了。
+| CPU的架构      | openwrt版本      | 内核版本    | 下载链接地址                                            |
+| ---------------------------------------------------------------------------------------------------  |
+| ar71xx_tiny   | OpenWrt-18.06.0 | 4.14.54-23  | [ar71xx_tiny_ua_4.14.54-23_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.0 | 4.14.54-23  | [mt76x8_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.0 | 4.14.54-23  | [mt7620_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.0 | 4.14.54-23  | [mt7621_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
+|               |                 |             |                                                      |
+| ar71xx_tiny   | OpenWrt-18.06.1 | 4.14.63-23  | [ar71xx_tiny_ua_4.14.63-23_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.1 | 4.14.63-23  | [mt76x8_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.1 | 4.14.63-23  | [mt7620_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.1 | 4.14.63-23  | [mt7621_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
+|               |                 |             |                                                      |
+| ar71xx_tiny   | OpenWrt-18.06.2 | 4.14.95-23  | [ar71xx_tiny_ua_4.14.95-23_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.2 | 4.14.95-23  | [mt76x8_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.2 | 4.14.95-23  | [mt7620_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.2 | 4.14.95-23  | [mt7621_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
+|               |                 |             |                                                      |
+| ar71xx_tiny   | OpenWrt-18.06.3 | 4.14.128-23 | [ar71xx_tiny_ua_4.14.128-23_mips_24kc.ipk][xmurp-ua] |
+| ramips_mt76x8 | OpenWrt-18.06.3 | 4.14.128-23 | [mt76x8_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7620 | OpenWrt-18.06.3 | 4.14.128-23 | [mt7620_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7621 | OpenWrt-18.06.3 | 4.14.128-23 | [mt7621_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
+|               |                 |             |                                                      |
+| ar71xx_tiny   | OpenWrt-18.06.4 | 4.14.131-23 | [ar71xx_tiny_ua_4.14.131-23_mips_24kc.ipk][xmurp-ua] |
+| ramips_mt76x8 | OpenWrt-18.06.4 | 4.14.131-23 | [mt76x8_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7620 | OpenWrt-18.06.4 | 4.14.131-23 | [mt7620_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-23 | [mt7621_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
+|               |                 |             |                                                      |
+| ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-27 | [mt7621_ua_4.14.146-27_mipsel_24kc.ipk][xmurp-ua]    |
 
-  ![](./img/13.png)
+**由于路由器版本太多，若您在上面没有找到对应的插件，建议进入QQ交流群寻求帮助**
 
+**由于路由器版本太多，若您在上面没有找到对应的插件，建议进入QQ交流群寻求帮助**
 
+<br /><br />
+接下来，需要安装好`xmurp-ua插件`并正确配置。将下载的`xmurp-ua插件`用`WinSCP`传到路由器`/tmp`文件夹下(WinSCP的使用方式上面已经阐述过)。
 
-- 配置 Privoxy 设置。点击 Services -> Privoxy WEB proxy。
-  - Files and Directories（文件和目录）：Action Files 删除到只剩一个框，填入`match-all.action`。Filter files 和 Trust files 均留空。
-  - Access Control（访问控制）：Listen addresses 填写`0.0.0.0:8118`，Permit access 填写`192.168.0.0/16`。Enable action file editor 勾选。
-  - Miscellaneous（杂项）：Accept intercepted requests 勾选。
-  - Logging（日志）：全部取消勾选。
+打开并登录putty，进行安装`xmurp-ua`插件的安装，请键入以下命令：
 
-点击 Save & Apply。
+```Bash
+cd /tmp
+opkg install 改成对应的xmurp-ua文件名.ipk
+```
 
-![](./img/14.png)
+<br /><br />
+## 验证防检测效果
 
+使用**电脑浏览器**打开[http://www.user-agent.cn/](http://www.user-agent.cn/) ，查看UA结果是否为`XMURP/1.0`，而不是`windows`或者`linux`或者`macOS`。
 
-
-![](./img/15.png)
-
-
-
-![](./img/16.png)
-
-
-
-![](./img/17.png)
-
-
-
-![](./img/18.png)
-
-
-
-- 配置防火墙转发。点击 Network -> Firewall（防火墙），然后点击 Custom Rules 标签，在大框框里另起一行(**注意，之前已经添加了6行代码，不要把刚刚添加的几行代码给删除了**)，添加下面的代码：
-
-  ```
-  iptables -t nat -N http_ua_drop
-  iptables -t nat -I PREROUTING -p tcp --dport 80 -j http_ua_drop
-  iptables -t nat -A http_ua_drop -m mark --mark 1/1 -j RETURN
-  iptables -t nat -A http_ua_drop -d 0.0.0.0/8 -j RETURN
-  iptables -t nat -A http_ua_drop -d 127.0.0.0/8 -j RETURN
-  iptables -t nat -A http_ua_drop -d 192.168.0.0/16 -j RETURN
-  iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118
-  ```
-
-点击 Restart Firewall（重启防火墙）按钮。
-
-![](./img/20.png)
-
-
-
-
-
-- 使用 Privoxy 替换 UA。打开`http://config.privoxy.org/edit-actions-list?f=0`，如果打不开，请重启路由器多测试几遍。点击 Edit 按钮。在Action 那一列中，hide-user-agent 改选为 Enable（绿色），在右侧 User Agent string to send 框中填写以下内容：
-
-  `Privoxy 3.0.26`
-
-其它全部选择为 No Change （紫色）。最后点击 Submit 按钮，再次重启路由器
-
-![](./img/21.png)
-
-
-
-![](./img/22.png)
-
-
-
-- 验证防检测效果。
-
-  手机连接到该路由器的WIFI，使用手机(注意关闭**为屁嗯**后再测试)在浏览器打开[http://www.user-agent.cn/](http://www.user-agent.cn/) ，查看结果是否为Privoxy 3.0.26，而不是android或者iphone。
-  
-  注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！注意关闭**为屁嗯**后再测试！
-
-  ![](./img/25.png)
-  
-  ![](./img/26.png)
+![](./img/28.png)
 
 
 
 ## 设置定时重启
 
-由于使用了Privoxy代理，会使得所有的http流量均被转发到Privoxy，时间一久，网络会变成异常慢。为了保证良好的网络，可以每天凌晨让路由器自动重启一遍以恢复路由器系统响应速度。
+为了保证良好的网络，可以每天凌晨让路由器自动重启一遍以恢复路由器系统响应速度。
 
 打开以下页面，键入以下代码(具体时间可自行更改)：
 
-```
-40 2 * * * sleep 5 && touch /etc/banner && reboot   //每天凌晨2点40分路由器自动重启
+```Bash
 40 4 * * * sleep 5 && touch /etc/banner && reboot   //每天凌晨4点40分路由器自动重启
 40 6 * * * sleep 5 && touch /etc/banner && reboot   //每天凌晨6点40分路由器自动重启
 ```
 
-
-
 ![](./img/11.png)
-
-
 
 提交后，然后打开以下页面，重启`cron`服务
 
 ![](./img/12.png)
-
-
 
 至此，所有步骤均已配置完毕，可以发现正常联网并且多台设备同时连接不会掉线。
 
@@ -631,6 +554,9 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 [openwrt-psg1208]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1208-squashfs-sysupgrade.bin
 [openwrt-psg1218a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin
 [openwrt-psg1218b]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin
+[openwrt-mifi-mini]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-miwifi-mini-squashfs-sysupgrade.bin
+[openwrt-k2p]:./openwrt/openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip
+
 
 [gdut-drcom-hc5661]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861
 [gdut-drcom-hc5661a]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B
@@ -643,4 +569,10 @@ NTP 就是用来同步两台电脑上的时钟的协议。接下来先启用 Ope
 [gdut-ar71xx-tiny]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-ar71xx-tiny
 
 
-
+[gdut-letter-of-responsibility]:http://nic.gdut.edu.cn/fj/xuesheng1003.doc
+[xmu-letter-of-responsibility]:https://net.xmu.edu.cn/_upload/article/files/e0/35/162b0f8849c4816e669df3a4f11c/dd7b487e-a51d-4e41-8d8e-d9fd42338a33.pdf
+[drcom-introduction]:https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+[GJXS]:https://www.gjxslisa.club/2018/10/27/drcom/?
+[NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
+[chenhaonan]:https://catalog.chn.moe/
+[xmurp-ua]:./xmurp-ua
