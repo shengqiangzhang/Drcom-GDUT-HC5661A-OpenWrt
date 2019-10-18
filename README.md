@@ -80,7 +80,7 @@
 
 本教程非原创，在以下开发者的基础上进行改进：
 
-[GJXS][GJXS]、[NickHopps][NickHopps]、[陈浩南][chenhaonan]
+[陈浩南][chenhaonan]、[NickHopps][NickHopps]、[GJXS][GJXS]
 
 
 
@@ -428,7 +428,7 @@ make package/ODP/compile
 # 步骤六:配置防检测
 
 <br /><br />
-## 修改 HTTP 头的 UA标志
+## 安装现成插件
 
 **UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信息加密，因此别人可以从这里看到这个数据包发自 Windows 电脑还是安卓手机等(所以根据这个原理，能够实现检测到超过1台设备立即强制断网的效果)。接下来把所有 HTTP 头中的 UA 都改得一样(伪装成只有一台设备，所以就不会被强制断网了)。**
 
@@ -469,19 +469,41 @@ make package/ODP/compile
 |               |                 |             |                                                      |
 | ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-27 | [mt7621_ua_4.14.146-27_mipsel_24kc.ipk][xmurp-ua]    |
 
-**由于路由器版本太多，若您在上面没有找到对应的插件，建议进入QQ交流群寻求帮助**
-
-**由于路由器版本太多，若您在上面没有找到对应的插件，建议进入QQ交流群寻求帮助**
-
 <br /><br />
 接下来，需要安装好`xmurp-ua插件`并正确配置。将下载的`xmurp-ua插件`用`WinSCP`传到路由器`/tmp`文件夹下(WinSCP的使用方式上面已经阐述过)。
 
-打开并登录putty，进行安装`xmurp-ua`插件的安装，请键入以下命令：
+打开并登录putty，进行安装`xmurp-ua`插件的安装，请键入以下命令进行安装：
 
 ```Bash
 cd /tmp
 opkg install 改成对应的xmurp-ua文件名.ipk
 ```
+
+
+
+<br /><br />
+## 自己编译插件
+
+对于使用第三方固件或非openwrt固件的，可以自行编译，前提是你有该固件的`sdk`文件。
+
+1. 下载好 SDK 后，放到用户目录下，解压 SDK 并进入。
+
+```bash
+cd ~ && tar xvf *.tar.xz && cd openwrt-sdk*
+```
+
+2. 下载 xmurp-ua 的源代码，并编译。
+
+```bash
+git clone https://github.com/CHN-beta/xmurp-ua.git package/xmurp-ua
+make package/xmurp-ua/compile V=sc
+```
+
+3. 如果弹出来一个菜单，按左右键选择 Exit，回车；然后选择 Save，回车；即可继续。
+
+4. 生成的`.ipk`文件位于`sdk`目录下的`bin`中
+
+
 
 <br /><br />
 ## 验证防检测效果
@@ -574,5 +596,5 @@ opkg install 改成对应的xmurp-ua文件名.ipk
 [drcom-introduction]:https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 [GJXS]:https://www.gjxslisa.club/2018/10/27/drcom/?
 [NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
-[chenhaonan]:https://catalog.chn.moe/
+[chenhaonan]:https://catalog.chn.moe/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8.html
 [xmurp-ua]:./xmurp-ua
