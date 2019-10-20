@@ -250,7 +250,7 @@
 
 账号:root
 
-密码:默认为admin
+密码:默认没有密码或者默认密码为password
 
 ![](./img/7.png)
 
@@ -380,7 +380,7 @@ make package/ODP/compile
 - PAP/CHAP username（PAP/CHAP 用户名）：学号
 - PAP/CHAP password（PAP/CHAP 密码）：校园网密码
 
-点击 Save & Apply（保存并应用）。这时，路由器本身和有线网已经可以上网了。
+点击 Save & Apply（保存并应用）。
 <br /><br />
 
 
@@ -413,13 +413,16 @@ make package/ODP/compile
 
 ![](./img/9.png)
 
-
-
-**配置完成后，重启路由器，耐心等待若干分钟（15分钟内），查看`PPPoE`是否拨号成功。**
-
 ![](./img/29.png)
 
+**配置完成后，重启路由器，耐心等待若干分钟（3分钟内），查看`WAN的PPPoE`是否拨号成功。如果Uptime、RX、TX均有数据，则说明路由器已经可以上网了。**
 
+> 如果发现路由器一直不能上网，则说明：
+> 1. wan中，学号密码输入错误；
+> 2. drcom插件中，学号密码输入错误；
+> 3. 压根没开通校园网；
+> 3. 路由器的wan没有与校园网端口连接；
+> 4. 网线断了，或者路由器坏了；
 
 
 
@@ -442,30 +445,30 @@ make package/ODP/compile
 
 | CPU的架构      | openwrt的版本    | 内核版本号码  | 下载链接地址                                           |
 | --------------| --------------- | ----------- | ---------------------------------------------------  |
-| ar71xx_tiny   | OpenWrt-18.06.0 | 4.14.54-23  | [ar71xx_tiny_ua_4.14.54-23_mips_24kc.ipk][xmurp-ua]  |
-| ramips_mt76x8 | OpenWrt-18.06.0 | 4.14.54-23  | [mt76x8_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7620 | OpenWrt-18.06.0 | 4.14.54-23  | [mt7620_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7621 | OpenWrt-18.06.0 | 4.14.54-23  | [mt7621_ua_4.14.54-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ar71xx_tiny   | OpenWrt-18.06.0 | 4.14.54-31  | [ar71xx_tiny_ua_4.14.54-31_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.0 | 4.14.54-31  | [mt76x8_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.0 | 4.14.54-31  | [mt7620_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.0 | 4.14.54-31  | [mt7621_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
 |               |                 |             |                                                      |
-| ar71xx_tiny   | OpenWrt-18.06.1 | 4.14.63-23  | [ar71xx_tiny_ua_4.14.63-23_mips_24kc.ipk][xmurp-ua]  |
-| ramips_mt76x8 | OpenWrt-18.06.1 | 4.14.63-23  | [mt76x8_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7620 | OpenWrt-18.06.1 | 4.14.63-23  | [mt7620_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7621 | OpenWrt-18.06.1 | 4.14.63-23  | [mt7621_ua_4.14.63-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ar71xx_tiny   | OpenWrt-18.06.1 | 4.14.63-31  | [ar71xx_tiny_ua_4.14.63-31_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.1 | 4.14.63-31  | [mt76x8_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.1 | 4.14.63-31  | [mt7620_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.1 | 4.14.63-31  | [mt7621_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
 |               |                 |             |                                                      |
-| ar71xx_tiny   | OpenWrt-18.06.2 | 4.14.95-23  | [ar71xx_tiny_ua_4.14.95-23_mips_24kc.ipk][xmurp-ua]  |
-| ramips_mt76x8 | OpenWrt-18.06.2 | 4.14.95-23  | [mt76x8_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7620 | OpenWrt-18.06.2 | 4.14.95-23  | [mt7620_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
-| ramips_mt7621 | OpenWrt-18.06.2 | 4.14.95-23  | [mt7621_ua_4.14.95-23_mipsel_24kc.ipk][xmurp-ua]     |
+| ar71xx_tiny   | OpenWrt-18.06.2 | 4.14.95-31  | [ar71xx_tiny_ua_4.14.95-31_mips_24kc.ipk][xmurp-ua]  |
+| ramips_mt76x8 | OpenWrt-18.06.2 | 4.14.95-31  | [mt76x8_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7620 | OpenWrt-18.06.2 | 4.14.95-31  | [mt7620_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
+| ramips_mt7621 | OpenWrt-18.06.2 | 4.14.95-31  | [mt7621_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
 |               |                 |             |                                                      |
-| ar71xx_tiny   | OpenWrt-18.06.3 | 4.14.128-23 | [ar71xx_tiny_ua_4.14.128-23_mips_24kc.ipk][xmurp-ua] |
-| ramips_mt76x8 | OpenWrt-18.06.3 | 4.14.128-23 | [mt76x8_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
-| ramips_mt7620 | OpenWrt-18.06.3 | 4.14.128-23 | [mt7620_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
-| ramips_mt7621 | OpenWrt-18.06.3 | 4.14.128-23 | [mt7621_ua_4.14.128-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ar71xx_tiny   | OpenWrt-18.06.3 | 4.14.128-31 | [ar71xx_tiny_ua_4.14.128-31_mips_24kc.ipk][xmurp-ua] |
+| ramips_mt76x8 | OpenWrt-18.06.3 | 4.14.128-31 | [mt76x8_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7620 | OpenWrt-18.06.3 | 4.14.128-31 | [mt7620_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7621 | OpenWrt-18.06.3 | 4.14.128-31 | [mt7621_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
 |               |                 |             |                                                      |
-| ar71xx_tiny   | OpenWrt-18.06.4 | 4.14.131-23 | [ar71xx_tiny_ua_4.14.131-23_mips_24kc.ipk][xmurp-ua] |
-| ramips_mt76x8 | OpenWrt-18.06.4 | 4.14.131-23 | [mt76x8_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
-| ramips_mt7620 | OpenWrt-18.06.4 | 4.14.131-23 | [mt7620_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
-| ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-23 | [mt7621_ua_4.14.131-23_mipsel_24kc.ipk][xmurp-ua]    |
+| ar71xx_tiny   | OpenWrt-18.06.4 | 4.14.131-31 | [ar71xx_tiny_ua_4.14.131-31_mips_24kc.ipk][xmurp-ua] |
+| ramips_mt76x8 | OpenWrt-18.06.4 | 4.14.131-31 | [mt76x8_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7620 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7620_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7621_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 |               |                 |             |                                                      |
 | ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-27 | [mt7621_ua_4.14.146-27_mipsel_24kc.ipk][xmurp-ua]    |
 
@@ -479,31 +482,57 @@ cd /tmp
 opkg install 改成对应的xmurp-ua文件名.ipk
 ```
 
+同时，安装压缩内存插件(务必确保路由器此时已经联网成功)：
 
+```Bash
+opkg update
+opkg install zram-swap
+```
+
+接着，检测这两个插件是否均已安装成功：
+
+```Bash
+opkg list-installed | grep zram-swap
+opkg list-installed | grep xmurp-ua 
+```
+
+若有显示插件版本信息，则说明安装成。
+
+最后，执行以下命令重启路由器。注意，必须重启路由器。**在进行后续步骤之前，请先重启路由器。**
+
+```Bash
+reboot
+```
 
 <br /><br />
 ## 自己编译插件
 
 对于使用第三方固件或非openwrt固件的，可以自行编译，前提是你有该固件的`sdk`文件。
 
-1. 下载好 SDK 后，放到用户目录下，解压 SDK 并进入。
+1. 安装编译依赖项。
+
+```bash
+sudo apt-get update && sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip gawk subversion mercurial ccache tar ssh
+```
+
+2. 下载好 SDK 后，放到当前用户目录下，解压 SDK 并进入该 SDK 目录。
 
 ```bash
 cd ~ && tar xvf *.tar.xz && cd openwrt-sdk*
 ```
 
-2. 下载 xmurp-ua 的源代码，并编译。
+3. 下载 xmurp-ua 的源代码，并编译。
 
 ```bash
 git clone https://github.com/CHN-beta/xmurp-ua.git package/xmurp-ua
 make package/xmurp-ua/compile V=sc
 ```
 
-3. 如果弹出来一个菜单，按左右键选择 Exit，回车；然后选择 Save，回车；即可继续。
+4. 如果弹出来一个菜单，按左右键选择 Exit，回车；然后选择 Save，回车；即可继续。
 
-4. 生成的`.ipk`文件位于`sdk`目录下的`bin`中
+5. 生成的`.ipk`文件位于`sdk`目录下的`bin`中。
 
-
+6. 回到上一步，按照上一步的方式安装插件。
 
 <br /><br />
 ## 验证防检测效果
