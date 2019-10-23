@@ -224,7 +224,7 @@
 |                      |               |                                                                    |
 | 新路由mini(newifi y1) | ramips-mt7620 | [y1-squashfs-sysupgrade.bin][y1-squashfs-sysupgrade.bin]           |
 | 新路由1(newifi y1s)   | ramips-mt7620 | [y1s-squashfs-sysupgrade.bin][y1s-squashfs-sysupgrade.bin]         |
-| 新路由2(newifi d1)    | ramips-mt7621 | [d1-squashfs-sysupgrade.bin][newifi-d1-squashfs-sysupgrade.bin]    |
+| 新路由2(newifi d1)    | ramips-mt7621 | [d1-squashfs-sysupgrade.bin][d1-squashfs-sysupgrade.bin]           |
 | 新路由3(newifi d2)    | ramips-mt7621 | [d2-squashfs-sysupgrade.bin][d2-squashfs-sysupgrade.bin]           |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
