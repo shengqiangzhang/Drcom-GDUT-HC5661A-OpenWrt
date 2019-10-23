@@ -133,8 +133,16 @@
 | 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861][breed-mt7620-hiwifi-hc5861]   |
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
 | 极路由enjoy(HC5861B)             | 暂时无                                                      |
+|                                 |                                                            |
 | 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
+|                                 |                                                            |
+| 新路由mini(newifi y1)            | [breed-mt7620-lenovo-y1][breed-mt7620-lenovo-y1]           |
+| 新路由1(newifi y1s)              | [breed-mt7620-lenovo-y2][breed-mt7620-lenovo-y2]           |
+| 新路由2(newifi d1)               | [breed-mt7621-newifi-d1][breed-mt7621-newifi-d1]           |
+| 新路由3(newifi d2)               | [breed-mt7621-newifi-d2][breed-mt7621-newifi-d2]           |
+|                                 |                                                            |
 | 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版][phicomm-breed]，提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -206,11 +214,18 @@
 | 极路由3(HC5861)       | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5861.bin][openwrt-hc5861]         |
 | 极路由4(HC5962)       | ramips/mt7621 | [openwrt-18.06.2-ramips-mt7621-hc5962.bin][openwrt-hc5962]         |
 | 极路由enjoy(HC5861B)  | 暂时无         | 暂时无                                                              |
+|                      |               |                                                                    |
 | 斐讯K1版              | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1208.bin][openwrt-psg1208]       |
 | 斐讯K2版 （五个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218a.bin][openwrt-psg1218a]     |
 | 斐讯K2C版（四个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218b.bin][openwrt-psg1218b]     |
 | 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip][openwrt-k2p]     |
+|                      |               |                                                                    |
 | 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
+|                      |               |                                                                    |
+| 新路由mini(newifi y1) | ramips-mt7620 | [y1-squashfs-sysupgrade.bin][y1-squashfs-sysupgrade.bin]           |
+| 新路由1(newifi y1s)   | ramips-mt7620 | [y1s-squashfs-sysupgrade.bin][y1s-squashfs-sysupgrade.bin]         |
+| 新路由2(newifi d1)    | ramips-mt7621 | [d1-squashfs-sysupgrade.bin][newifi-d1-squashfs-sysupgrade.bin]    |
+| 新路由3(newifi d2)    | ramips-mt7621 | [d2-squashfs-sysupgrade.bin][d2-squashfs-sysupgrade.bin]           |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
 
@@ -262,6 +277,9 @@
 <br /><br />
 # 步骤四:安装Dr.com插件
 
+Dr.com插件适用于使用Dr.com认证的用户，主要是进行模拟拨号，定时发送心跳包的作用。不是使用Dr.com认证的不需要安装Dr.com插件。
+
+<br /><br />
 ## 安装现成插件
 
 这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找现成的)
@@ -269,17 +287,24 @@
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
 
-| 路由器版本号                                         | 下载链接地址                                       |
+| 路由器版本号                                         | CPU的架构      | 下载链接地址                       |
 | -------------------------------------------------- | ------------------------------------------------ |
-| GDUT-极路由HC5661, HC5761, HC5861, 小米路由器mini版   | [下载链接地址][gdut-drcom-hc5661]                  |
-| GDUT-极路由HC5661A, HC5861B                         | [下载链接地址][gdut-drcom-hc5661a]                 |
-| GDUT-极路由HC5962                                   | [下载链接地址][gdut-drcom-hc5962]                  |
-| GDUT-极路由HC6361                                   | [下载链接地址][gdut-drcom-hc6361]                  |
-| GDUT-斐讯K2T版                                      | [下载链接地址][gdut-drcom-k2t]                     |
-| GDUT-斐讯K2P版                                      | [下载链接地址][gdut-drcom-k2p]                     |
-| GDUT-斐讯K1-PSG1208, K2-PSG1218，K2G                | [下载链接地址][gdut-drcom-psg1208]                 |
-| GDUT-ramips-rt305x                                 | [下载链接地址][gdut-drcom-rt305x]                  |
-| GDUT-ar71xx_tiny                                   | [下载链接地址][gdut-ar71xx-tiny]                   |
+| GDUT-极路由HC5661, HC5761, HC5861                   | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
+| GDUT-极路由HC5661A, HC5861B                         | ramips/mt76x8 | [下载链接地址][gdut-drcom-hc5661a] |
+| GDUT-极路由HC5962                                   | ramips/mt7621 | [下载链接地址][gdut-drcom-hc5962]  |
+| GDUT-极路由HC6361                                   | ar71xx-generic| [下载链接地址][gdut-drcom-hc6361]  |
+|                                                    |               |                                  |
+| GDUT-斐讯K2T版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2t]     |
+| GDUT-斐讯K2P版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2p]     |
+| GDUT-斐讯K1, K2，K2G, K2C                           | ramips-mt7620 | [下载链接地址][gdut-drcom-psg1208] |
+|                                                    |               |                                  |
+| GDUT-小米路由器mini版                                | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
+|                                                    |               |                                  |
+| GDUT-新路由mini(newifi y1), 新路由1(newifi y1s)      | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
+| GDUT-新路由2(newifi d1), 新路由3(newifi d2)          | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
+|                                                    |               |                                  |
+| GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]  |
+| GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]   |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -297,9 +322,8 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 **至此，Dr.com插件安装完毕。**
 
-<br />
-<br />
 
+<br /><br />
 ## 自己编译插件
 
 对于没有上述对应型号路由器的`广工(广东工业大学)同学`，可进行以下步骤进行编译生成自己的Dr.com插件.
@@ -379,8 +403,7 @@ make package/ODP/compile
 - Protocol（通信协议）：改选为`PPPoE`，然后点击出现的 Switch Protocol（切换协议）按钮。
 - PAP/CHAP username（PAP/CHAP 用户名）：学号
 - PAP/CHAP password（PAP/CHAP 密码）：校园网密码
-
-点击 Save & Apply（保存并应用）。
+- 点击 Save & Apply（保存并应用）。
 <br /><br />
 
 
@@ -470,7 +493,7 @@ make package/ODP/compile
 | ramips_mt7620 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7620_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 | ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7621_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 |               |                 |             |                                                      |
-| ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-27 | [mt7621_ua_4.14.146-27_mipsel_24kc.ipk][xmurp-ua]    |
+| ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-32 | [mt7621_ua_4.14.146-32_mipsel_24kc.ipk][xmurp-ua]    |
 
 <br /><br />
 接下来，需要安装好`xmurp-ua插件`并正确配置。将下载的`xmurp-ua插件`用`WinSCP`传到路由器`/tmp`文件夹下(WinSCP的使用方式上面已经阐述过)。
@@ -530,7 +553,7 @@ make package/xmurp-ua/compile V=sc
 
 4. 如果弹出来一个菜单，按左右键选择 Exit，回车；然后选择 Save，回车；即可继续。
 
-5. 生成的`.ipk`文件位于`sdk`目录下的`bin`中。
+5. 生成的`.ipk`文件位于`sdk`目录下的`bin`目录中。
 
 6. 回到上一步，按照上一步的方式安装插件。
 
@@ -570,6 +593,29 @@ make package/xmurp-ua/compile V=sc
 
 
 <br /><br />
+# 存在问题
+**问题1**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？
+**回答1**：不用担心。微信使用X5内核浏览器，会对所有http请求进行代理，故数据包被发送到路由器之前已经被代理了，不走80端口，所以不进行更改。默认只对80端口的http数据进行修改。
+<br />
+
+**问题2**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？
+**回答2**：关闭nat加速或者software flow offloading。以openwrt系统为例：Network → firewall → General Settings → **取消**勾选Software flow offloading
+<br />
+
+**问题3**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？
+**回答3**：更改ua总是有副作用的，由于部分http网页和应用程序无法识别ua，导致出错。对于这种情况，只能设置例外，放行该设备，也就是说不会修改该设备发送的数据的ua。在路由器防火墙中添加以下规则：
+
+```bash
+# 01:23:45:67:89:AB为该设备的mac地址
+iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:67:89:AB -j MARK --set-xmark 0x100/0x100
+```
+<br />
+
+
+
+
+
+<br /><br />
 # 补充
 **完整版**请点击这里打开[GitHub项目地址](https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt)
 
@@ -595,6 +641,10 @@ make package/xmurp-ua/compile V=sc
 [breed-mt7621-hiwifi-hc5962]:https://breed.hackpascal.net/breed-mt7621-hiwifi-hc5962.bin
 [breed-mt7620-xiaomi-mini]:https://breed.hackpascal.net/breed-mt7620-xiaomi-mini.bin
 [phicomm-breed]:https://pan.baidu.com/s/1mLNdozrTm_guN1IDA8heOQ
+[breed-mt7620-lenovo-y1]:https://breed.hackpascal.net/breed-mt7620-lenovo-y1.bin
+[breed-mt7620-lenovo-y2]:https://breed.hackpascal.net/breed-mt7620-lenovo-y1s.bin
+[breed-mt7621-newifi-d1]:https://breed.hackpascal.net/breed-mt7621-newifi-d1.bin
+[breed-mt7621-newifi-d2]:https://breed.hackpascal.net/breed-mt7621-newifi-d2.bin
 
 [openwrt-hc6361]:http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin
 [openwrt-hc5661a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin
@@ -607,7 +657,10 @@ make package/xmurp-ua/compile V=sc
 [openwrt-psg1218b]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin
 [openwrt-mifi-mini]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-miwifi-mini-squashfs-sysupgrade.bin
 [openwrt-k2p]:./openwrt/openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip
-
+[y1-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-y1-squashfs-sysupgrade.bin
+[y1s-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-y1s-squashfs-sysupgrade.bin
+[d1-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-newifi-d1-squashfs-sysupgrade.bin
+[d2-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
 
 [gdut-drcom-hc5661]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861
 [gdut-drcom-hc5661a]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B
