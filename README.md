@@ -29,12 +29,12 @@
   * [下载对应的OpenWrt系统固件](#下载对应的openwrt系统固件)
   * [开始刷入OpenWrt固件](#开始刷入openwrt固件)
 * [步骤四:安装Dr.com插件](#步骤四安装drcom插件)
-  * [安装现成插件](#安装现成插件)
-  * [自己编译插件](#自己编译插件)
+  * [安装现成Drcom插件](#安装现成Drcom插件)
+  * [自己编译Drcom插件](#自己编译Drcom插件)
 * [步骤五:配置上网](#步骤五配置上网)
 * [步骤六:配置防检测](#步骤六配置防检测)
-  * [修改 HTTP 头的 UA标志](#修改-http-头的-ua标志)
-  * [设置定时重启](#设置定时重启)
+  * [安装现成xmurp-ua插件](#安装现成xmurp-ua插件)
+  * [自己编译xmurp-ua插件](#自己编译xmurp-ua插件)
 * [补充](#补充)
 * [License](#license)
 
@@ -78,9 +78,11 @@
 
 
 
-本教程非原创，在以下开发者的基础上进行改进：
+**本教程非原创，在以下开发者的基础上进行改进:**
 
-[陈浩南][chenhaonan]、[NickHopps][NickHopps]、[GJXS][GJXS]
+1. [陈浩南: 在厦大宿舍安装路由器][chenhaonan]
+2. [NickHopps: 开启愉快的路由之旅：广工校园网Wifi][NickHopps]
+3. [GJXS: 绕过检测移动设备的一种思路][GJXS]
 
 
 
@@ -218,7 +220,7 @@
 | 斐讯K1版              | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1208.bin][openwrt-psg1208]       |
 | 斐讯K2版 （五个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218a.bin][openwrt-psg1218a]     |
 | 斐讯K2C版（四个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218b.bin][openwrt-psg1218b]     |
-| 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip][openwrt-k2p]     |
+| 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-32-mt7621-k2p-wifi.zip][openwrt-k2p]     |
 |                      |               |                                                                    |
 | 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
 |                      |               |                                                                    |
@@ -263,9 +265,9 @@
 
 安装完成后会自动重启，这时可以不断刷新浏览器，直到管理界面显示出来，如果没有显示，建议稍后使用192.168.1.1访问管理页面。
 
-账号:root
+账号:**root**
 
-密码:默认没有密码或者默认密码为password
+密码:**默认没有密码或者默认密码为password**
 
 ![](./img/7.png)
 
@@ -277,10 +279,10 @@
 <br /><br />
 # 步骤四:安装Dr.com插件
 
-Dr.com插件适用于使用Dr.com认证的用户，主要是进行模拟拨号，定时发送心跳包的作用。不是使用Dr.com认证的不需要安装Dr.com插件。
+**Dr.com插件适用于使用Dr.com认证的用户，主要是进行模拟拨号，定时发送心跳包的作用。不是使用Dr.com认证进行上网的用户不需要安装Dr.com插件。**
 
 <br /><br />
-## 安装现成插件
+## 安装现成Drcom插件
 
 这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找现成的)
 
@@ -324,7 +326,7 @@ opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 
 
 <br /><br />
-## 自己编译插件
+## 自己编译Drcom插件
 
 对于没有上述对应型号路由器的`广工(广东工业大学)同学`，可进行以下步骤进行编译生成自己的Dr.com插件.
 
@@ -384,10 +386,7 @@ make package/ODP/compile
 # 最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的bin/packages/xxx/base/yyy.ipk
 ```
 
-![](./img/27.jpg)
-
-
-
+<br /><br />
 4.最终生成的yyy.ipk文件的位置为我们所下载的openwrt-sdk目录下的`bin/packages/xxx/base/yyy.ipk`，到这里你也有一个适合自己路由器的drcom插件了,回到[步骤四](#安装现成插件)安装Dr.com客户端
 
 
@@ -407,7 +406,7 @@ make package/ODP/compile
 <br /><br />
 
 
-2. 点击 Network -> Wireless（无线）。如果提示 Disabled（已禁用）就点击 Enable（启用）。可能只有一个 2.4G 的，也可能有一个 2.4G 的、一个 5G 的。点 2.4G 的 Edit(编辑) 按钮。
+2. 点击 Network -> Wireless（无线）。如果提示 Disabled（已禁用）就点击 Enable（启用）。可能只有一个 2.4G 的，也可能有一个 2.4G 的、一个 5G 的。点 2.4G或5G 的 Edit(编辑) 按钮。
 
 - ESSID：填 WiFi 的名字。
 <br /><br />
@@ -416,7 +415,7 @@ make package/ODP/compile
 3. 点击 Wireless Security（无线安全）
 
 - Encryption（加密）：改选为`WPA2-PSK`
-- Key（密码）：填 WiFi 密码
+- Key（密码）：填你想要的 WiFi 密码
 - 点击 Save & Apply（保存并应用）
 <br /><br />
 
@@ -436,11 +435,14 @@ make package/ODP/compile
 
 ![](./img/9.png)
 
+
+<br /><br />
+配置完成后，**重启路由器，并请耐心等待若干分钟（3分钟内）**，查看`WAN的PPPoE`是否拨号成功。如果Uptime、RX、TX均有数据，则说明路由器已经可以上网了。
+
 ![](./img/29.png)
 
-**配置完成后，重启路由器，耐心等待若干分钟（3分钟内），查看`WAN的PPPoE`是否拨号成功。如果Uptime、RX、TX均有数据，则说明路由器已经可以上网了。**
+**如果发现路由器一直不能上网，则说明:**
 
-> 如果发现路由器一直不能上网，则说明：
 > 1. wan中，学号密码输入错误；
 > 2. drcom插件中，学号密码输入错误；
 > 3. 压根没开通校园网；
@@ -454,7 +456,7 @@ make package/ODP/compile
 # 步骤六:配置防检测
 
 <br /><br />
-## 安装现成插件
+## 安装现成xmurp-ua插件
 
 **UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信息加密，因此别人可以从这里看到这个数据包发自 Windows 电脑还是安卓手机等(所以根据这个原理，能够实现检测到超过1台设备立即强制断网的效果)。接下来把所有 HTTP 头中的 UA 都改得一样(伪装成只有一台设备，所以就不会被强制断网了)。**
 
@@ -519,16 +521,17 @@ opkg list-installed | grep zram-swap
 opkg list-installed | grep xmurp-ua 
 ```
 
-若有显示插件版本信息，则说明安装成。
+<br /><br />
+若有显示`zram-swap`和`xmurp-ua`的插件版本信息，则说明安装成功，否则请重新安装。
 
-最后，执行以下命令重启路由器。注意，必须重启路由器。**在进行后续步骤之前，请先重启路由器。**
+**最后，执行以下命令重启路由器。注意，必须重启路由器。在进行后续步骤之前，请先重启路由器。**
 
 ```Bash
 reboot
 ```
 
 <br /><br />
-## 自己编译插件
+## 自己编译xmurp-ua插件
 
 对于使用第三方固件或非openwrt固件的，可以自行编译，前提是你有该固件的`sdk`文件。
 
@@ -566,23 +569,6 @@ make package/xmurp-ua/compile V=sc
 
 
 
-## 设置定时重启
-
-为了保证良好的网络，可以每天凌晨让路由器自动重启一遍以恢复路由器系统响应速度。
-
-打开以下页面，键入以下代码(具体时间可自行更改)：
-
-```Bash
-40 4 * * * sleep 5 && touch /etc/banner && reboot   //每天凌晨4点40分路由器自动重启
-40 6 * * * sleep 5 && touch /etc/banner && reboot   //每天凌晨6点40分路由器自动重启
-```
-
-![](./img/11.png)
-
-提交后，然后打开以下页面，重启`cron`服务
-
-![](./img/12.png)
-
 至此，所有步骤均已配置完毕，可以发现正常联网并且多台设备同时连接不会掉线。
 
 **本教程仅限于技术交流，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态。**
@@ -595,17 +581,14 @@ make package/xmurp-ua/compile V=sc
 <br /><br />
 # 存在问题
 **问题1**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？
-
 **回答1**：不用担心。微信使用X5内核浏览器，会对所有http请求进行代理，故数据包被发送到路由器之前已经被代理了，不走80端口，所以不进行更改。默认只对80端口的http数据进行修改。
 <br />
 
 **问题2**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？
-
 **回答2**：关闭nat加速或者software flow offloading。以openwrt系统为例：Network → firewall → General Settings → **取消**勾选Software flow offloading
 <br />
 
 **问题3**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？
-
 **回答3**：更改ua总是有副作用的，由于部分http网页和应用程序无法识别ua，导致出错。对于这种情况，只能设置例外，放行该设备，也就是说不会修改该设备发送的数据的ua。在路由器防火墙中添加以下规则：
 
 ```bash
@@ -659,7 +642,7 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [openwrt-psg1218a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218a-squashfs-sysupgrade.bin
 [openwrt-psg1218b]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-psg1218b-squashfs-sysupgrade.bin
 [openwrt-mifi-mini]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-miwifi-mini-squashfs-sysupgrade.bin
-[openwrt-k2p]:./openwrt/openwrt-R9.10.1-4.14.146-27-mt7621-k2p-wifi.zip
+[openwrt-k2p]:./openwrt/openwrt-R9.10.1-4.14.146-32-mt7621-k2p-wifi.zip
 [y1-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-y1-squashfs-sysupgrade.bin
 [y1s-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-y1s-squashfs-sysupgrade.bin
 [d1-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-newifi-d1-squashfs-sysupgrade.bin
@@ -679,7 +662,7 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [gdut-letter-of-responsibility]:http://nic.gdut.edu.cn/fj/xuesheng1003.doc
 [xmu-letter-of-responsibility]:https://net.xmu.edu.cn/_upload/article/files/e0/35/162b0f8849c4816e669df3a4f11c/dd7b487e-a51d-4e41-8d8e-d9fd42338a33.pdf
 [drcom-introduction]:https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-[GJXS]:https://www.gjxslisa.club/2018/10/27/drcom/?
+[GJXS]:http://www.gjxs1980.top/2018/10/27/drcom/?
 [NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
 [chenhaonan]:https://catalog.chn.moe/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8.html
 [xmurp-ua]:./xmurp-ua
