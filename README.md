@@ -580,15 +580,15 @@ make package/xmurp-ua/compile V=sc
 
 <br /><br />
 # 存在问题
-**问题1**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？
+**问题1**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？  
 **回答1**：不用担心。微信使用X5内核浏览器，会对所有http请求进行代理，故数据包被发送到路由器之前已经被代理了，不走80端口，所以不进行更改。默认只对80端口的http数据进行修改。
 <br />
 
-**问题2**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？
+**问题2**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？  
 **回答2**：关闭nat加速或者software flow offloading。以openwrt系统为例：Network → firewall → General Settings → **取消**勾选Software flow offloading
 <br />
 
-**问题3**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？
+**问题3**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？  
 **回答3**：更改ua总是有副作用的，由于部分http网页和应用程序无法识别ua，导致出错。对于这种情况，只能设置例外，放行该设备，也就是说不会修改该设备发送的数据的ua。在路由器防火墙中添加以下规则：
 
 ```bash
@@ -596,6 +596,15 @@ make package/xmurp-ua/compile V=sc
 iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:67:89:AB -j MARK --set-xmark 0x100/0x100
 ```
 <br />
+
+**问题4**：无法安装`xmurp-ua`插件？  
+**回答4**：教程提供的现成`xmurp-ua`插件只能用于`openwrt`官方固件，如果是第三方魔改的固件或lede固件，请自行编译`xmurp-ua`插件。
+<br />
+
+**问题5**：完全看不懂教程？  
+**回答5**：建议放弃，购买现成的。
+<br />
+
 
 
 
