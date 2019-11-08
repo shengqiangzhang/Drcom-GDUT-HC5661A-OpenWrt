@@ -35,6 +35,7 @@
 * [步骤六:配置防检测](#步骤六配置防检测)
   * [安装现成xmurp-ua插件](#安装现成xmurp-ua插件)
   * [自己编译xmurp-ua插件](#自己编译xmurp-ua插件)
+* [疑惑解答](#疑惑解答)
 * [补充](#补充)
 * [License](#license)
 
@@ -134,15 +135,14 @@
 | 极路由1S(HC5661)/极路由2(HC5761)  | [breed-mt7620-hiwifi-hc5761][breed-mt7620-hiwifi-hc5761]   |
 | 极路由3(HC5861)                  | [breed-mt7620-hiwifi-hc5861][breed-mt7620-hiwifi-hc5861]   |
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
-| 极路由enjoy(HC5861B)             | 暂时无                                                      |
-|                                 |                                                            |
+| -                               | -                                                          |
 | 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
-|                                 |                                                            |
+| -                               | -                                                          |
 | 新路由mini(newifi y1)            | [breed-mt7620-lenovo-y1][breed-mt7620-lenovo-y1]           |
 | 新路由1(newifi y1s)              | [breed-mt7620-lenovo-y2][breed-mt7620-lenovo-y2]           |
 | 新路由2(newifi d1)               | [breed-mt7621-newifi-d1][breed-mt7621-newifi-d1]           |
 | 新路由3(newifi d2)               | [breed-mt7621-newifi-d2][breed-mt7621-newifi-d2]           |
-|                                 |                                                            |
+| -                               | -                                                          |
 | 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版][phicomm-breed]，提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
 
 
@@ -155,15 +155,15 @@
 
 使用WinSCP登入你的路由器后台，其中：
 
-主机名：你的后台管理地址(比如192.168.1.1或者192.168.1.199或者其他)
+主机名: **你的后台管理地址(比如192.168.1.1或者192.168.1.199或者其他)**
 
-账号：root 
+账号: **root**
 
-密码 ：你的后台管理密码
+密码: **你的后台管理密码，如果忘记请恢复出产设置**
 
-端口：1022或者22(自行测试) 
+端口: **1022或者22(自行测试)**
 
-模式：SCP 
+模式: **SCP** 
 
 ![](./img/1.png)
 
@@ -175,9 +175,23 @@
 
 ## 刷入Breed
 
-使用[putty64](./software/putty64.exe)登入你的路由器后台，主机名、账号、密码、端口均与上述相同，登入成功后键入以下命令
+使用[putty64](./software/putty64.exe)登入你的路由器后台，主机名称、账号、密码、端口均与上述相同。连接类型选择**SSH**，然后点击**打开**按钮。
+
+然后等一会，窗口会弹出**login as:**，此时输入账号**root**
+
+接着，窗口会弹出**password as:**，此时输入**后台管理密码。注意，输入密码的时候，密码不会显示在窗口上，需要靠感觉输入密码。**
+
+> linux系统的登录方式是基本知识，但是考虑到的确有一部分人对计算机完全不懂，所以才会介绍那么详细。
+
+
+登入成功后键入以下命令: 
 
 `mtd -r write /tmp/breed-mt7628-hiwifi-hc5661a.bin u-boot` 
+
+如果是小米路由器mini，则键入以下命令:
+
+`mtd -r write /tmp/breed-mt7620-xiaomi-mini.bin Bootloader`
+
 
 ![](./img/2.png)
 
@@ -215,15 +229,14 @@
 | 极路由2(HC5761)       | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5761.bin][openwrt-hc5761]         |
 | 极路由3(HC5861)       | ramips/mt7620 | [openwrt-18.06.2-ramips-mt7620-hc5861.bin][openwrt-hc5861]         |
 | 极路由4(HC5962)       | ramips/mt7621 | [openwrt-18.06.2-ramips-mt7621-hc5962.bin][openwrt-hc5962]         |
-| 极路由enjoy(HC5861B)  | 暂时无         | 暂时无                                                              |
-|                      |               |                                                                    |
+| -                    | -             | -                                                                  |
 | 斐讯K1版              | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1208.bin][openwrt-psg1208]       |
 | 斐讯K2版 （五个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218a.bin][openwrt-psg1218a]     |
 | 斐讯K2C版（四个网口）   | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-psg1218b.bin][openwrt-psg1218b]     |
 | 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-32-mt7621-k2p-wifi.zip][openwrt-k2p]     |
-|                      |               |                                                                    |
+| -                    | -             | -                                                                  |
 | 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
-|                      |               |                                                                    |
+| -                    | -             | -                                                                  |
 | 新路由mini(newifi y1) | ramips-mt7620 | [y1-squashfs-sysupgrade.bin][y1-squashfs-sysupgrade.bin]           |
 | 新路由1(newifi y1s)   | ramips-mt7620 | [y1s-squashfs-sysupgrade.bin][y1s-squashfs-sysupgrade.bin]         |
 | 新路由2(newifi d1)    | ramips-mt7621 | [d1-squashfs-sysupgrade.bin][d1-squashfs-sysupgrade.bin]           |
@@ -255,7 +268,7 @@
 
 
 
-现在正是开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](./openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
+现在正式开始刷入OpenWrt固件，依次点击固件更新→勾选固件→点击选择文件，选择我们刚刚下载的[openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin](./openwrt/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin)，然后耐心等待固件刷入完成。
 
 ![](./img/4.png)
 
@@ -279,12 +292,12 @@
 <br /><br />
 # 步骤四:安装Dr.com插件
 
-**Dr.com插件适用于使用Dr.com认证的用户，主要是进行模拟拨号，定时发送心跳包的作用。不是使用Dr.com认证进行上网的用户不需要安装Dr.com插件。**
+**Dr.com插件仅适用于使用Dr.com客户端认证(PPPoE,P版)的用户，主要是进行模拟拨号，定时发送心跳包的作用。使用Dr.com网页版认证(DHCP,D版)或者不使用Dr.com认证进行上网的用户不需要安装Dr.com插件。**
 
 <br /><br />
 ## 安装现成Drcom插件
 
-这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找现成的)
+这里以`广工(广东工业大学)校园网为例`，其他学校请自行获得相应的Dr.com插件，如果您愿意折腾的话，可以[点击这里](https://github.com/drcoms/drcom-generic)自行编译合适自己的学校的Dr.com插件(需要较强的编程基础，建议还是找对应自己学校的现成的插件)
 
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
@@ -295,16 +308,16 @@
 | GDUT-极路由HC5661A, HC5861B                         | ramips/mt76x8 | [下载链接地址][gdut-drcom-hc5661a] |
 | GDUT-极路由HC5962                                   | ramips/mt7621 | [下载链接地址][gdut-drcom-hc5962]  |
 | GDUT-极路由HC6361                                   | ar71xx-generic| [下载链接地址][gdut-drcom-hc6361]  |
-|                                                    |               |                                  |
+| -                                                  | -             | -                                |
 | GDUT-斐讯K2T版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2t]     |
 | GDUT-斐讯K2P版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2p]     |
 | GDUT-斐讯K1, K2，K2G, K2C                           | ramips-mt7620 | [下载链接地址][gdut-drcom-psg1208] |
-|                                                    |               |                                  |
+| -                                                  | -             | -                                |
 | GDUT-小米路由器mini版                                | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
-|                                                    |               |                                  |
+| -                                                  | -             | -                                |
 | GDUT-新路由mini(newifi y1), 新路由1(newifi y1s)      | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
 | GDUT-新路由2(newifi d1), 新路由3(newifi d2)          | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
-|                                                    |               |                                  |
+| -                                                  | -             | -                                |
 | GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]  |
 | GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]   |
 
@@ -319,6 +332,7 @@
 
 ```Bash
 cd /tmp
+
 opkg install gdut-drcom_6.0-4_mipsel_24kc.ipk
 ```
 
@@ -403,6 +417,9 @@ make package/ODP/compile
 - PAP/CHAP username（PAP/CHAP 用户名）：学号
 - PAP/CHAP password（PAP/CHAP 密码）：校园网密码
 - 点击 Save & Apply（保存并应用）。
+
+> 建议在输入账号密码的时候多检查几遍，保证没有输错
+
 <br /><br />
 
 
@@ -420,18 +437,18 @@ make package/ODP/compile
 <br /><br />
 
 
-4. 配置dr.com客户端，这里以`广工(广东工业大学)`为例，进行如下配置：
+4. 配置dr.com客户端**(使用Dr.com P版认证的才需要配置)**，这里以`广工(广东工业大学)`为例，进行如下配置：
 
 - 点击 Network（网络）-> Interfaces（接口），查看WAN6的MAC地址并复制，修改Dr.com客户端的配置。
 
 ![](./img/8.png)
 
 
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
+**注意,在接口名称中,不一定选择的是eth0.2,而是选择与WAN6对应的接口名称,有可能是eth1,下图提示有误**
 
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
+**注意,在接口名称中,不一定选择的是eth0.2,而是选择与WAN6对应的接口名称,有可能是eth1,下图提示有误**
 
-**注意，在接口名称中，不一定选择的是eth0.2，而是选择与WAN6对应的接口名称，有可能是eth1，下图提示有误**
+**注意,在接口名称中,不一定选择的是eth0.2,而是选择与WAN6对应的接口名称,有可能是eth1,下图提示有误**
 
 ![](./img/9.png)
 
@@ -443,11 +460,12 @@ make package/ODP/compile
 
 **如果发现路由器一直不能上网，则说明:**
 
-> 1. wan中，学号密码输入错误；
-> 2. drcom插件中，学号密码输入错误；
-> 3. 压根没开通校园网；
-> 3. 路由器的wan没有与校园网端口连接；
-> 4. 网线断了，或者路由器坏了；
+> 1. wan中，学号密码输入错误(可能性30%)；
+> 2. drcom插件中，学号密码输入错误(可能性30%)；
+> 3. 路由器的wan没有与校园网端口连接(可能性20%)；
+> 4. 网线断了，或者路由器坏了(可能性15%)；
+> 5. 压根没开通校园网(可能性4.9%)；
+> 6. 端口被学校网络中心拉黑了(极少出现0.1%)。
 
 
 
@@ -455,12 +473,17 @@ make package/ODP/compile
 <br /><br />
 # 步骤六:配置防检测
 
+**User-Agent字段中包含了操作系统版本信息，而HTTP协议没有对这些信息加密，因此可以直接从这里判断数据包是发自于PC设备还是移动设备。根据这个原理，可以猜测到，可能是由于移动设备发送的数据包被检测到，才导致了被强制断网的情况发生。**
+
+<br />
+**所以，解决的办法就是统一所有设备的User-Agent，模拟成只有一台设备在上网的情况**
+
+<br />
+**这里推荐使用`xmurp-ua`插件，作者已经开源，项目地址：**[https://github.com/CHN-beta/xmurp-ua][xmurp-ua-github]
+
 <br /><br />
 ## 安装现成xmurp-ua插件
 
-**UA 中包含了操作系统版本等信息，而 HTTP 协议没有对这些信息加密，因此别人可以从这里看到这个数据包发自 Windows 电脑还是安卓手机等(所以根据这个原理，能够实现检测到超过1台设备立即强制断网的效果)。接下来把所有 HTTP 头中的 UA 都改得一样(伪装成只有一台设备，所以就不会被强制断网了)。**
-
-<br /><br />
 请打开路由器后台，查看路由器和openwrt的具体信息，以便确定我们要安装哪个版本的更改UA插件。
 
 ![](./img/30.png)
@@ -474,27 +497,27 @@ make package/ODP/compile
 | ramips_mt76x8 | OpenWrt-18.06.0 | 4.14.54-31  | [mt76x8_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7620 | OpenWrt-18.06.0 | 4.14.54-31  | [mt7620_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7621 | OpenWrt-18.06.0 | 4.14.54-31  | [mt7621_ua_4.14.54-31_mipsel_24kc.ipk][xmurp-ua]     |
-|               |                 |             |                                                      |
+| -             | -               | -           | -                                                    |
 | ar71xx_tiny   | OpenWrt-18.06.1 | 4.14.63-31  | [ar71xx_tiny_ua_4.14.63-31_mips_24kc.ipk][xmurp-ua]  |
 | ramips_mt76x8 | OpenWrt-18.06.1 | 4.14.63-31  | [mt76x8_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7620 | OpenWrt-18.06.1 | 4.14.63-31  | [mt7620_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7621 | OpenWrt-18.06.1 | 4.14.63-31  | [mt7621_ua_4.14.63-31_mipsel_24kc.ipk][xmurp-ua]     |
-|               |                 |             |                                                      |
+| -             | -               | -           | -                                                    |
 | ar71xx_tiny   | OpenWrt-18.06.2 | 4.14.95-31  | [ar71xx_tiny_ua_4.14.95-31_mips_24kc.ipk][xmurp-ua]  |
 | ramips_mt76x8 | OpenWrt-18.06.2 | 4.14.95-31  | [mt76x8_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7620 | OpenWrt-18.06.2 | 4.14.95-31  | [mt7620_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
 | ramips_mt7621 | OpenWrt-18.06.2 | 4.14.95-31  | [mt7621_ua_4.14.95-31_mipsel_24kc.ipk][xmurp-ua]     |
-|               |                 |             |                                                      |
+| -             | -               | -           | -                                                    |
 | ar71xx_tiny   | OpenWrt-18.06.3 | 4.14.128-31 | [ar71xx_tiny_ua_4.14.128-31_mips_24kc.ipk][xmurp-ua] |
 | ramips_mt76x8 | OpenWrt-18.06.3 | 4.14.128-31 | [mt76x8_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
 | ramips_mt7620 | OpenWrt-18.06.3 | 4.14.128-31 | [mt7620_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
 | ramips_mt7621 | OpenWrt-18.06.3 | 4.14.128-31 | [mt7621_ua_4.14.128-31_mipsel_24kc.ipk][xmurp-ua]    |
-|               |                 |             |                                                      |
+| -             | -               | -           | -                                                    |
 | ar71xx_tiny   | OpenWrt-18.06.4 | 4.14.131-31 | [ar71xx_tiny_ua_4.14.131-31_mips_24kc.ipk][xmurp-ua] |
 | ramips_mt76x8 | OpenWrt-18.06.4 | 4.14.131-31 | [mt76x8_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 | ramips_mt7620 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7620_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 | ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7621_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
-|               |                 |             |                                                      |
+| -             | -               | -           | -                                                    |
 | ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-32 | [mt7621_ua_4.14.146-32_mipsel_24kc.ipk][xmurp-ua]    |
 
 <br /><br />
@@ -504,13 +527,15 @@ make package/ODP/compile
 
 ```Bash
 cd /tmp
+
 opkg install 改成对应的xmurp-ua文件名.ipk
 ```
 
-同时，安装压缩内存插件(务必确保路由器此时已经联网成功)：
+同时，安装压缩内存插件**(务必确保路由器此时已经联网成功)：**
 
 ```Bash
 opkg update
+
 opkg install zram-swap
 ```
 
@@ -518,12 +543,13 @@ opkg install zram-swap
 
 ```Bash
 opkg list-installed | grep zram-swap
+
 opkg list-installed | grep xmurp-ua 
 ```
 
-<br /><br />
 若有显示`zram-swap`和`xmurp-ua`的插件版本信息，则说明安装成功，否则请重新安装。
 
+<br /><br />
 **最后，执行以下命令重启路由器。注意，必须重启路由器。在进行后续步骤之前，请先重启路由器。**
 
 ```Bash
@@ -551,6 +577,7 @@ cd ~ && tar xvf *.tar.xz && cd openwrt-sdk*
 
 ```bash
 git clone https://github.com/CHN-beta/xmurp-ua.git package/xmurp-ua
+
 make package/xmurp-ua/compile V=sc
 ```
 
@@ -571,7 +598,7 @@ make package/xmurp-ua/compile V=sc
 
 至此，所有步骤均已配置完毕，可以发现正常联网并且多台设备同时连接不会掉线。
 
-**本教程仅限于技术交流，安装路由器的行为完全是您个人意志所决定的，如您已成功安装，请在 24 小时内重置路由器至原出产状态。**
+**再次声明，本教程仅限于技术交流，如您已成功安装，请在 24 小时内重置路由器至原出产状态。**
 
 
 
@@ -579,17 +606,9 @@ make package/xmurp-ua/compile V=sc
 
 
 <br /><br />
-# 存在问题
-**问题1**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？  
-**回答1**：不用担心。微信使用X5内核浏览器，会对所有http请求进行代理，故数据包被发送到路由器之前已经被代理了，不走80端口，所以不进行更改。默认只对80端口的http数据进行修改。
-<br />
-
-**问题2**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？  
-**回答2**：关闭nat加速或者software flow offloading。以openwrt系统为例：Network → firewall → General Settings → **取消**勾选Software flow offloading
-<br />
-
-**问题3**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？  
-**回答3**：更改ua总是有副作用的，由于部分http网页和应用程序无法识别ua，导致出错。对于这种情况，只能设置例外，放行该设备，也就是说不会修改该设备发送的数据的ua。在路由器防火墙中添加以下规则：
+# 疑惑解答
+**问题1**：安装了`xmurp-ua`插件后，部分网页打不开，WeGame 和腾讯游戏下载器无法下载，“校友邦”无法登陆？  
+**回答1**：更改ua总是有副作用的，由于部分http网页和应用程序无法识别ua，导致出错。对于这种情况，只能设置例外，放行该设备，也就是说不会修改该设备发送的数据的ua。在路由器防火墙中添加以下规则：
 
 ```bash
 # 01:23:45:67:89:AB为该设备的mac地址
@@ -597,12 +616,24 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 ```
 <br />
 
-**问题4**：无法安装`xmurp-ua`插件？  
-**回答4**：教程提供的现成`xmurp-ua`插件只能用于`openwrt`官方固件，如果是第三方魔改的固件或lede固件，请自行编译`xmurp-ua`插件。
+**问题2**：无法安装`xmurp-ua`插件？  
+**回答2**：教程提供的现成`xmurp-ua`插件只能用于`openwrt`官方固件，如果是第三方魔改的固件或lede固件，请自行编译`xmurp-ua`插件。
 <br />
 
-**问题5**：完全看不懂教程？  
-**回答5**：建议放弃，购买现成的。
+**问题3**：确认已经安装了`xmurp-ua`插件，但是在微信检查到ua没有更改，在其他地方却检查到ua更改了？  
+**回答3**：不用担心。微信使用X5内核浏览器，会对所有http请求进行代理，故数据包被发送到路由器之前已经被代理了，不走80端口，所以不进行更改。默认只对80端口的http数据进行修改。
+<br />
+
+**问题4**：确认已经安装了`xmurp-ua`插件，但是ua却没有更改，插件无效？  
+**回答4**：关闭nat加速或者software flow offloading。以openwrt系统为例：Network → firewall → General Settings → **取消**勾选Software flow offloading
+<br />
+
+**问题5**：教程中提供的`drcom插件`是否适用于其他学校？  
+**回答5**：仅限于gdut使用，其他学校需要找到对应的`drcom插件`。
+<br />
+
+**问题6**：完全看不懂教程？  
+**回答6**：建议放弃，去X宝或者X鱼购买现成的。
 <br />
 
 
@@ -675,3 +706,4 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
 [chenhaonan]:https://catalog.chn.moe/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8.html
 [xmurp-ua]:./xmurp-ua
+[xmurp-ua-github]:https://github.com/CHN-beta/xmurp-ua
