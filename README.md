@@ -476,9 +476,11 @@ make package/ODP/compile
 **User-Agent字段中包含了操作系统版本信息，而HTTP协议没有对这些信息加密，因此可以直接从这里判断数据包是发自于PC设备还是移动设备。根据这个原理，可以猜测到，可能是由于移动设备发送的数据包被检测到，才导致了被强制断网的情况发生。**
 
 <br />
+
 **所以，解决的办法就是统一所有设备的User-Agent，模拟成只有一台设备在上网的情况**
 
 <br />
+
 **这里推荐使用`xmurp-ua`插件，作者已经开源，项目地址：**[https://github.com/CHN-beta/xmurp-ua][xmurp-ua-github]
 
 <br /><br />
