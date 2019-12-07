@@ -59,7 +59,7 @@
 <br /><br />
 # QQ交流群
 
-欢迎加入QQ交流群，群号748317786，仅限技术交流，禁止商业行为
+欢迎加入QQ交流群，群号[748317786][qq-group]，仅限技术交流，禁止商业行为
 
 ![Q群号748317786](img/group.jpg)
 
@@ -122,6 +122,8 @@
 <br /><br />
 # 步骤二:刷入不死Breed
 
+<br />
+
 ## 下载Breed
 
 [Breed](https://breed.hackpascal.net/)是一个路由器的Bootloader（Bootloader 意为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE等都是 Bootloader），装它的目的是为了下一步刷入固件（ROM）。以`极路由1S HC5661A`为例，**不同型号下载不同的Breed，请务必对号入座**，下载[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)
@@ -150,6 +152,7 @@
 
 
 
+<br />
 
 ## 上传到指定目录
 
@@ -172,6 +175,7 @@
 登陆成功后进入`/tmp目录`，将刚才下载的[breed-mt7628-hiwifi-hc5661a.bin](./breed/breed-mt7628-hiwifi-hc5661a.bin)上传到这个目录
 
 
+<br />
 
 ## 刷入Breed
 
@@ -204,6 +208,8 @@
 
 <br /><br />
 # 步骤三:刷入OpenWrt 系统固件
+
+<br />
 
 ## 下载对应的OpenWrt系统固件
 
@@ -247,6 +253,7 @@
 
 
 
+<br />
 
 ## 开始刷入OpenWrt固件
 
@@ -437,7 +444,7 @@ make package/ODP/compile
 <br /><br />
 
 
-4. 配置dr.com客户端**(使用Dr.com P版认证的才需要配置)**，这里以`广工(广东工业大学)`为例，进行如下配置：
+4. 配置dr.com客户端**使用Dr.com P版认证的才需要配置**，这里以`广工(广东工业大学)`为例，进行如下配置：
 
 - 点击 Network（网络）-> Interfaces（接口），查看WAN6的MAC地址并复制，修改Dr.com客户端的配置。
 
@@ -709,3 +716,6 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [chenhaonan]:https://catalog.chn.moe/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8.html
 [xmurp-ua]:./xmurp-ua
 [xmurp-ua-github]:https://github.com/CHN-beta/xmurp-ua
+
+
+[qq-group]:https://shang.qq.com/wpa/qunwpa?idkey=b34489d9d3d50ab3dba5db4c7cc83377af562406809da4326284febf31443366
