@@ -309,24 +309,25 @@
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
 
-| 路由器版本号                                         | CPU的架构      | 下载链接地址                       |
-| -------------------------------------------------- | --------------|--------------------------------- |
+| 路由器版本号                                         | CPU的架构      | 下载链接地址                      |
+| -------------------------------------------------- | --------------|---------------------------------  |
 | GDUT-极路由HC5661, HC5761, HC5861                   | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
 | GDUT-极路由HC5661A, HC5861B                         | ramips/mt76x8 | [下载链接地址][gdut-drcom-hc5661a] |
 | GDUT-极路由HC5962                                   | ramips/mt7621 | [下载链接地址][gdut-drcom-hc5962]  |
 | GDUT-极路由HC6361                                   | ar71xx-generic| [下载链接地址][gdut-drcom-hc6361]  |
-| -                                                  | -             | -                                |
+| -                                                  | -             | -                                  |
 | GDUT-斐讯K2T版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2t]     |
 | GDUT-斐讯K2P版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2p]     |
 | GDUT-斐讯K1, K2，K2G, K2C                           | ramips-mt7620 | [下载链接地址][gdut-drcom-psg1208] |
-| -                                                  | -             | -                                |
+| -                                                  | -             | -                                  |
 | GDUT-小米路由器mini版                                | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
-| -                                                  | -             | -                                |
+| GDUT-红米路由器AC2100                                | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
+| -                                                  | -             | -                                  |
 | GDUT-新路由mini(newifi y1), 新路由1(newifi y1s)      | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
 | GDUT-新路由2(newifi d1), 新路由3(newifi d2)          | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
-| -                                                  | -             | -                                |
-| GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]  |
-| GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]   |
+| -                                                  | -             | -                                  |
+| GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]   |
+| GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]    |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -640,10 +641,6 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 
 **问题5**：教程中提供的`drcom插件`是否适用于其他学校？  
 **回答5**：仅限于gdut使用，其他学校需要找到对应的`drcom插件`。
-<br />
-
-**问题6**：完全看不懂教程？  
-**回答6**：建议放弃，去X宝或者X鱼购买现成的。
 <br />
 
 
