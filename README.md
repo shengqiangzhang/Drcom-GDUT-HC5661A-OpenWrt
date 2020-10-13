@@ -316,7 +316,6 @@
 | GDUT-极路由HC5962                                   | ramips/mt7621 | [下载链接地址][gdut-drcom-hc5962]  |
 | GDUT-极路由HC6361                                   | ar71xx-generic| [下载链接地址][gdut-drcom-hc6361]  |
 | -                                                  | -             | -                                  |
-| GDUT-斐讯K2T版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2t]     |
 | GDUT-斐讯K2P版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2p]     |
 | GDUT-斐讯K1, K2，K2G, K2C                           | ramips-mt7620 | [下载链接地址][gdut-drcom-psg1208] |
 | -                                                  | -             | -                                  |
