@@ -139,13 +139,15 @@
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
 | -                               | -                                                          |
 | 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
+| 红米AC2100一键刷入Breed工具包      | 链接: [红米AC2100刷Breed工具包][breed-mt7621-redmi-AC2100], 密码: 14wa<br />红米AC2100路由器类型的, 刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
 | -                               | -                                                          |
 | 新路由mini(newifi y1)            | [breed-mt7620-lenovo-y1][breed-mt7620-lenovo-y1]           |
 | 新路由1(newifi y1s)              | [breed-mt7620-lenovo-y2][breed-mt7620-lenovo-y2]           |
 | 新路由2(newifi d1)               | [breed-mt7621-newifi-d1][breed-mt7621-newifi-d1]           |
 | 新路由3(newifi d2)               | [breed-mt7621-newifi-d2][breed-mt7621-newifi-d2]           |
 | -                               | -                                                          |
-| 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版][phicomm-breed]，提取码: 5kjc<br />斐讯路由器类型的，刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+| 斐讯K1、K2一键刷Breed工具包        | 链接: [斐讯路由器刷breed Web助手通用版][phicomm-breed], 提取码: 5kjc<br />斐讯路由器类型的, 刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+
 
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，请自行查找
@@ -242,6 +244,7 @@
 | 斐讯K2P版（无线驱动）   | ramips-mt7621 | [openwrt-R9.10.1-4.14.146-32-mt7621-k2p-wifi.zip][openwrt-k2p]     |
 | -                    | -             | -                                                                  |
 | 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
+| 红米AC2100版          | ramips-mt7621 | [openwrt-ramips-mt7621-redmi-ac2100.bin][openwrt-redmi-ac2100]     |
 | -                    | -             | -                                                                  |
 | 新路由mini(newifi y1) | ramips-mt7620 | [y1-squashfs-sysupgrade.bin][y1-squashfs-sysupgrade.bin]           |
 | 新路由1(newifi y1s)   | ramips-mt7620 | [y1s-squashfs-sysupgrade.bin][y1s-squashfs-sysupgrade.bin]         |
@@ -528,6 +531,8 @@ make package/ODP/compile
 | ramips_mt7621 | OpenWrt-18.06.4 | 4.14.131-31 | [mt7621_ua_4.14.131-31_mipsel_24kc.ipk][xmurp-ua]    |
 | -             | -               | -           | -                                                    |
 | ramips_mt7621 | OpenWrt-R9.10.1 | 4.14.146-32 | [mt7621_ua_4.14.146-32_mipsel_24kc.ipk][xmurp-ua]    |
+| -             | -               | -           | -                                                    |
+| ramips_mt7621 | OpenWrt-R20.9.15 | 5.4.69-34  | [mt7621_ua_5.4.69-34_mipsel_24kc.ipk][xmurp-ua]      |
 
 <br /><br />
 接下来，需要安装好`xmurp-ua插件`并正确配置。将下载的`xmurp-ua插件`用`WinSCP`传到路由器`/tmp`文件夹下(WinSCP的使用方式上面已经阐述过)。
@@ -677,6 +682,7 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [breed-mt7620-lenovo-y2]:https://breed.hackpascal.net/breed-mt7620-lenovo-y1s.bin
 [breed-mt7621-newifi-d1]:https://breed.hackpascal.net/breed-mt7621-newifi-d1.bin
 [breed-mt7621-newifi-d2]:https://breed.hackpascal.net/breed-mt7621-newifi-d2.bin
+[breed-mt7621-redmi-AC2100]:https://www.lanzoui.com/ikxB6hfdo3c
 
 [openwrt-hc6361]:http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-hiwifi-hc6361-squashfs-sysupgrade.bin
 [openwrt-hc5661a]:http://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt76x8/openwrt-18.06.2-ramips-mt76x8-hc5661a-squashfs-sysupgrade.bin
@@ -693,6 +699,7 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [y1s-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7620/openwrt-18.06.2-ramips-mt7620-y1s-squashfs-sysupgrade.bin
 [d1-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-newifi-d1-squashfs-sysupgrade.bin
 [d2-squashfs-sysupgrade.bin]:https://archive.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-18.06.2-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
+[openwrt-redmi-ac2100]:https://www.lanzoui.com/iBEYPhfe60h
 
 [gdut-drcom-hc5661]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661%E3%80%81HC5761%E5%92%8CHC5861
 [gdut-drcom-hc5661a]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/tree/master/drcom/GDUT-%E6%9E%81%E8%B7%AF%E7%94%B1-HC5661A%E5%92%8CHC5861B
@@ -710,7 +717,7 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [drcom-introduction]:https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 [GJXS]:http://www.gjxs1980.top/2018/10/27/drcom/?
 [NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
-[chenhaonan]:https://catalog.chn.moe/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8.html
+[chenhaonan]:https://catalog.chn.moe/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8/
 [xmurp-ua]:./xmurp-ua
 [xmurp-ua-github]:https://github.com/CHN-beta/xmurp-ua
 
