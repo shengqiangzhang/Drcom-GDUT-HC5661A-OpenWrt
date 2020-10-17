@@ -1,6 +1,11 @@
-
 <p align="center">
-  <a href="https://openwrt.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Openwrt_Logo.svg"></a>
+
+                                           ____                 _       __     __ 
+                                          / __ \____  ___  ____| |     / /____/ /_
+                                         / / / / __ \/ _ \/ __ \ | /| / / ___/ __/
+                                        / /_/ / /_/ /  __/ / / / |/ |/ / /  / /_  
+                                        \____/ .___/\___/_/ /_/|__/|__/_/   \__/  
+                                            /_/                                   
 </p>
 
 <p align="center">
