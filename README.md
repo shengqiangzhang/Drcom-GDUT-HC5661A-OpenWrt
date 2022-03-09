@@ -720,9 +720,9 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 [gdut-letter-of-responsibility]:http://nic.gdut.edu.cn/fj/xuesheng1003.doc
 [xmu-letter-of-responsibility]:https://net.xmu.edu.cn/_upload/article/files/e0/35/162b0f8849c4816e669df3a4f11c/dd7b487e-a51d-4e41-8d8e-d9fd42338a33.pdf
 [drcom-introduction]:https://wiki.archlinux.org/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-[GJXS]:http://www.gjxs1980.top/2018/10/27/drcom/?
+[GJXS]:http://www.aigrantli.com/2018/10/27/drcom/
 [NickHopps]:https://blog.csdn.net/liucheng2012560/article/details/78755309
-[chenhaonan]:https://catalog.chn.moe/%E6%95%99%E7%A8%8B/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8/
+[chenhaonan]:https://catalog.chn.moe/%E6%8A%80%E6%9C%AF/OpenWrt/%E5%9C%A8%E5%8E%A6%E5%A4%A7%E5%AE%BF%E8%88%8D%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1%E5%99%A8/
 [xmurp-ua]:./xmurp-ua
 [xmurp-ua-github]:https://github.com/CHN-beta/xmurp-ua
 
