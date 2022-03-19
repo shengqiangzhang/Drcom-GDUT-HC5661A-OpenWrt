@@ -144,7 +144,8 @@
 | 极路由4(HC5962)                  | [breed-mt7621-hiwifi-hc5962][breed-mt7621-hiwifi-hc5962]   |
 | -                               | -                                                          |
 | 小米路由器mini版                  | [breed-mt7620-xiaomi-mini][breed-mt7620-xiaomi-mini]       |
-| 红米AC2100一键刷入Breed工具包      | 链接: [红米AC2100刷Breed工具包][breed-mt7621-redmi-AC2100], 密码: 14wa<br />红米AC2100路由器类型的, 刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+| 红米AC2100版                     | 链接: [红米AC2100刷Breed工具包][breed-mt7621-redmi-AC2100], 密码: 14wa<br />红米AC2100路由器类型的, 刷完可直接跳到[步骤三](#下载对应的OpenWrt系统固件) |
+| 小米路由器4C版                    | 请直接查看[issues27][issues27]提供的小米路由器4C刷机过程         |
 | -                               | -                                                          |
 | 新路由mini(newifi y1)            | [breed-mt7620-lenovo-y1][breed-mt7620-lenovo-y1]           |
 | 新路由1(newifi y1s)              | [breed-mt7620-lenovo-y2][breed-mt7620-lenovo-y2]           |
@@ -250,6 +251,7 @@
 | -                    | -             | -                                                                  |
 | 小米路由器mini版       | ramips-mt7620 | [openwrt-18.06.2-ramips-mt7620-miwifi-mini.bin][openwrt-mifi-mini] |
 | 红米AC2100版          | ramips-mt7621 | [openwrt-ramips-mt7621-redmi-ac2100.bin][openwrt-redmi-ac2100]     |
+| 小米路由器4C版         | ramips/mt76x8 | 请直接查看[issues27][issues27]提供的小米路由器4C刷机过程                 |
 | -                    | -             | -                                                                  |
 | 新路由mini(newifi y1) | ramips-mt7620 | [y1-squashfs-sysupgrade.bin][y1-squashfs-sysupgrade.bin]           |
 | 新路由1(newifi y1s)   | ramips-mt7620 | [y1s-squashfs-sysupgrade.bin][y1s-squashfs-sysupgrade.bin]         |
@@ -316,25 +318,25 @@
 
 以下是`广工(广东工业大学)校园网`各个路由器相应版本Dr.com插件下载
 
-
 | 路由器版本号                                         | CPU的架构      | 下载链接地址                      |
 | -------------------------------------------------- | --------------|---------------------------------  |
 | GDUT-极路由HC5661, HC5761, HC5861                   | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
 | GDUT-极路由HC5661A, HC5861B                         | ramips/mt76x8 | [下载链接地址][gdut-drcom-hc5661a] |
 | GDUT-极路由HC5962                                   | ramips/mt7621 | [下载链接地址][gdut-drcom-hc5962]  |
 | GDUT-极路由HC6361                                   | ar71xx-generic| [下载链接地址][gdut-drcom-hc6361]  |
-| -                                                  | -             | -                                  |
+| -                                                  | -             | -                                |
 | GDUT-斐讯K2P版                                      | ramips-mt7621 | [下载链接地址][gdut-drcom-k2p]     |
 | GDUT-斐讯K1, K2，K2G, K2C                           | ramips-mt7620 | [下载链接地址][gdut-drcom-psg1208] |
-| -                                                  | -             | -                                  |
+| -                                                  | -             | -                                |
 | GDUT-小米路由器mini版                                | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
-| GDUT-红米路由器AC2100                                | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
-| -                                                  | -             | -                                  |
+| GDUT-红米路由器AC2100版                              | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
+| GDUT-小米路由器4C版                                  | ramips/mt76x8 | [下载链接地址][gdut-drcom-hc5661a] |
+| -                                                  | -             | -                                |
 | GDUT-新路由mini(newifi y1), 新路由1(newifi y1s)      | ramips/mt7620 | [下载链接地址][gdut-drcom-hc5661]  |
 | GDUT-新路由2(newifi d1), 新路由3(newifi d2)          | ramips/mt7621 | [下载链接地址][gdut-drcom-k2p]     |
-| -                                                  | -             | -                                  |
-| GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]   |
-| GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]    |
+| -                                                  | -             | -                                |
+| GDUT-ramips-rt305x                                 | ramips-rt305x | [下载链接地址][gdut-drcom-rt305x]  |
+| GDUT-ar71xx_tiny                                   | ar71xx_tiny   | [下载链接地址][gdut-ar71xx-tiny]   |
 
 > `说明:`由于路由器版本太多，若您在上面没有找到对应的路由器型号，建议选择自己编译(难度很低)
 
@@ -728,3 +730,5 @@ iptables -t mangle -A PREROUTING -p tcp --dport 80 -m mac --mac-source 01:23:45:
 
 
 [qq-group]:https://shang.qq.com/wpa/qunwpa?idkey=b34489d9d3d50ab3dba5db4c7cc83377af562406809da4326284febf31443366
+
+[issues27]:https://github.com/shengqiangzhang/Drcom-GDUT-HC5661A-OpenWrt/issues/27
